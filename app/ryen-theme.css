@@ -7968,3 +7968,44 @@
     translate: 0 0 !important;
   }
 }
+
+
+/* PDF certificate thumbnail — mobile-safe */
+
+.ryen-credential-pdf-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background: #f4f4f1;
+  color: #171717;
+  text-align: center;
+}
+
+.ryen-pdf-icon {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  border-radius: 18px;
+  background: #dededb;
+}
+
+.ryen-pdf-label {
+  padding: 7px 14px;
+  border-radius: 30px;
+  background: #99e836;
+  color: #0d0d0c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ryen-pdf-hint {
+  color: #777;
+  font-size: 12px;
+}

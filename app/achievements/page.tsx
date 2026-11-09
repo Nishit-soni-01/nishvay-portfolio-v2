@@ -1,8 +1,10 @@
 
 import Image from "next/image";
-import Link from "next/link";
-import { ExternalLink, ArrowLeft } from "lucide-react";
+import { headers } from "next/headers";
+import { ExternalLink, FileText } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+
+export const instant = false;
 
 type Credential = {
   title: string;
@@ -241,9 +243,11 @@ const sections = [
 function CredentialCard({
   item,
   index,
+  isMobileDevice,
 }: {
   item: Credential;
   index: number;
+  isMobileDevice: boolean;
 }) {
   const fileUrl = `/certificates/${encodeURIComponent(item.file)}`;
 
@@ -264,6 +268,22 @@ function CredentialCard({
             sizes="(max-width: 768px) 90vw, 40vw"
             className="ryen-credential-image"
           />
+        ) : isMobileDevice ? (
+          <div className="ryen-credential-pdf-card">
+            <div className="ryen-pdf-icon">
+              <FileText size={42} strokeWidth={1.5} />
+            </div>
+
+            <span className="ryen-pdf-label">
+              PDF DOCUMENT
+            </span>
+
+            <h4>{item.title}</h4>
+
+            <span className="ryen-pdf-hint">
+              Click to view certificate
+            </span>
+          </div>
         ) : (
           <iframe
             src={`${fileUrl}#page=1&toolbar=0&navpanes=0&view=FitH`}
@@ -287,6 +307,7 @@ function CredentialCard({
           <span className="ryen-credential-category">
             {item.category}
           </span>
+
           <h3>{item.title}</h3>
         </div>
 
@@ -303,16 +324,22 @@ function CredentialCard({
   );
 }
 
-export default function AchievementsPage() {
+export default async function AchievementsPage() {
+  const headersList = await headers();
+  const userAgent = headersList.get("user-agent") ?? "";
+
+  // Detect actual mobile devices using their browser user agent.
+  // Desktop responsive mode normally retains the desktop user agent.
+  const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(userAgent);
+
   return (
     <>
-
       <main className="min-h-screen bg-[#0d0d0c] px-6 pt-32 pb-24 text-white md:px-12">
         <div className="mx-auto max-w-7xl">
           <Reveal className="mb-12">
             <a href="/" className="ryen-back-link">
-            <span className="ryen-back-arrow">←</span>
-            <span>BACK TO HOME</span>
+              <span className="ryen-back-arrow">←</span>
+              <span>BACK TO HOME</span>
             </a>
           </Reveal>
 
@@ -353,6 +380,7 @@ export default function AchievementsPage() {
                   <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
                     {section.name}
                   </h2>
+
                   <p className="mt-1.5 text-sm text-muted">
                     {section.description}
                   </p>
@@ -364,6 +392,7 @@ export default function AchievementsPage() {
                       key={item.file}
                       item={item}
                       index={index}
+                      isMobileDevice={isMobileDevice}
                     />
                   ))}
                 </div>
