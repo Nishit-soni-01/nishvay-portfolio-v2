@@ -1,0 +1,7970 @@
+/* =========================================
+   RYEN DESIGN — TYPOGRAPHY
+========================================= */
+
+@font-face {
+  font-family: "NeueMachina";
+  src: url("/fonts/NeueMachina-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeueMachina";
+  src: url("/fonts/NeueMachina-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/fonts/Manrope-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DM-Sans-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ryen typography classes */
+.ryen-heading {
+  font-family: "NeueMachina", sans-serif;
+}
+
+.ryen-body {
+  font-family: "Manrope", sans-serif;
+}
+
+/* =========================================
+   RYEN DESIGN — COLOR SYSTEM
+========================================= */
+
+:root {
+  --ryen-bg: #0d0d0c;
+  --ryen-bg-secondary: #151514;
+
+  --ryen-text: #ffffff;
+  --ryen-text-muted: #a5a5a0;
+
+  --ryen-accent: #99e836;
+  --ryen-accent-dark: #0d0d0c;
+
+  --ryen-border: rgb(255 255 255 / 12%);
+  --ryen-surface: rgb(255 255 255 / 5%);
+}
+
+/* Base Ryen surface */
+.ryen-page {
+  background: var(--ryen-bg);
+  color: var(--ryen-text);
+  font-family: "Manrope", sans-serif;
+}
+
+/* =========================================
+   RYEN DESIGN — HERO SECTION
+========================================= */
+
+.ryen-hero {
+  min-height: 100svh;
+  background: var(--ryen-bg);
+  color: var(--ryen-text);
+  padding: 125px 5.2% 35px;
+  isolation: isolate;
+  position: relative;
+}
+
+.ryen-hero-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.ryen-hero-glow {
+  position: absolute;
+  z-index: -1;
+  width: 550px;
+  height: 550px;
+  top: 10%;
+  right: 8%;
+  border-radius: 50%;
+  background: var(--ryen-accent);
+  opacity: 0.055;
+  filter: blur(150px);
+  pointer-events: none;
+}
+
+.ryen-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  color: var(--ryen-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ryen-status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--ryen-accent);
+  box-shadow: 0 0 12px var(--ryen-accent);
+}
+
+.ryen-hero-title {
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(76px, 12.5vw, 180px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  overflow-wrap: anywhere;
+}
+
+.ryen-accent {
+  color: var(--ryen-accent);
+}
+
+.ryen-hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: end;
+  gap: 60px;
+  margin-top: 55px;
+}
+
+.ryen-hero-description {
+  max-width: 560px;
+  padding-bottom: 15px;
+}
+
+.ryen-role {
+  margin-bottom: 18px;
+  color: var(--ryen-accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ryen-intro {
+  max-width: 480px;
+  color: var(--ryen-text-muted);
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.ryen-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+  margin-top: 32px;
+}
+
+/* Button & Link styles */
+.ryen-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 22px;
+  background: var(--ryen-accent);
+  color: var(--ryen-accent-dark);
+  font-family: "Manrope", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--ryen-accent);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.ryen-button:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--ryen-accent-dark);
+}
+
+.ryen-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ryen-text);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ryen-text-link:hover {
+  color: var(--ryen-accent);
+}
+
+/* =========================================
+   RYEN — SPLIT SCREEN HOMEPAGE HERO
+========================================= */
+
+.ryen-home {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  height: calc(100svh - 84px);
+  min-height: 700px;
+  background: #0d0d0c;
+  color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ryen-home-portrait {
+  position: relative;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  background: #171717;
+}
+
+.ryen-home-portrait img {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.ryen-home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 35px 6% 24px;
+  gap: 12px;
+  overflow: visible;
+}
+
+.ryen-home-description {
+  max-width: 500px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.ryen-home-label {
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.ryen-home-description p {
+  margin-top: 12px;
+  color: #aaa;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Moving ticker */
+
+.ryen-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 12px 0;
+  background: transparent;
+  color: #99e836;
+  flex-shrink: 0;
+}
+
+.ryen-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: ryen-marquee 22s linear infinite;
+}
+
+.ryen-marquee-track span {
+  flex-shrink: 0;
+  padding-right: 30px;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.ryen-marquee-track b {
+  padding: 0 20px;
+}
+
+@keyframes ryen-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Main name */
+
+.ryen-home-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 8px 0;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(85px, 8.5vw, 145px);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+  flex-shrink: 0;
+}
+
+.ryen-name-line {
+  color: #99e836;
+}
+
+.ryen-name-dot {
+  color: #99e836;
+}
+
+/* =========================================
+   RYEN — HERO LAYOUT FIX
+========================================= */
+
+.ryen-home {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  height: calc(100svh - 84px);
+  min-height: 650px;
+  margin-top: 84px;
+  overflow: hidden;
+  background: #0d0d0c;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.ryen-home-portrait {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #171717;
+}
+
+.ryen-home-portrait img {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.ryen-home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 38px 5.5% 25px;
+  gap: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ryen-home-description {
+  flex-shrink: 0;
+  max-width: 540px;
+}
+
+.ryen-home-description p {
+  margin-top: 14px;
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Scrolling ticker */
+
+.ryen-marquee {
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 12px 0;
+}
+
+.ryen-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: ryen-marquee 22s linear infinite;
+}
+
+.ryen-marquee-track span {
+  flex-shrink: 0;
+  padding-right: 30px;
+  color: #99e836;
+  font-size: clamp(14px, 1.25vw, 19px);
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  white-space: nowrap;
+}
+
+.ryen-marquee-track b {
+  padding: 0 20px;
+}
+
+@keyframes ryen-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Large name */
+
+.ryen-home-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  margin: 0;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(76px, 8.2vw, 142px);
+  font-weight: 400;
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+}
+
+.ryen-name-line,
+.ryen-name-dot {
+  color: #99e836;
+}
+
+/* Bottom information and circular element */
+
+.ryen-home-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.ryen-home-role {
+  min-width: 0;
+  max-width: 470px;
+}
+
+.ryen-role-title {
+  color: #99e836;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.ryen-role-description {
+  margin-top: 14px;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ryen-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ryen-home-link:hover {
+  color: #99e836;
+}
+
+/* Circular rotating contact badge */
+
+.ryen-contact-circle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: clamp(145px, 13vw, 205px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #99e836;
+  color: #0d0d0c;
+  text-decoration: none;
+  transition: transform 0.4s ease;
+}
+
+.ryen-contact-circle:hover {
+  transform: scale(1.06);
+}
+
+.ryen-contact-text {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: ryen-circle-rotate 16s linear infinite;
+}
+
+.ryen-contact-text text {
+  fill: #0d0d0c;
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+@keyframes ryen-circle-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ryen-contact-arrow {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #0d0d0c;
+  color: #99e836;
+  transition: transform 0.3s ease;
+}
+
+.ryen-contact-circle:hover .ryen-contact-arrow {
+  transform: rotate(45deg);
+}
+
+/* Bottom progress indicator */
+
+.ryen-home-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: 12px;
+}
+
+.ryen-progress-line {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: rgb(255 255 255 / 20%);
+}
+
+.ryen-progress-line span {
+  display: block;
+  width: 10%;
+  height: 100%;
+  background: #99e836;
+}
+
+.ryen-progress-count {
+  color: #999;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* =========================================
+   RESPONSIVE HERO
+========================================= */
+
+@media (max-width: 1100px) {
+  .ryen-home {
+    grid-template-columns: 38% 62%;
+  }
+
+  .ryen-home-content {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .ryen-home-name {
+    font-size: clamp(72px, 8.5vw, 110px);
+  }
+
+  .ryen-contact-circle {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ryen-home {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    margin-top: 84px;
+    overflow: visible;
+  }
+
+  .ryen-home-portrait {
+    width: 100%;
+    height: 48svh;
+    min-height: 330px;
+    flex-shrink: 0;
+  }
+
+  .ryen-home-content {
+    height: auto;
+    min-height: 650px;
+    padding: 35px 7% 30px;
+    overflow: hidden;
+  }
+
+  .ryen-home-name {
+    font-size: clamp(72px, 15vw, 112px);
+  }
+
+  .ryen-home-bottom {
+    align-items: flex-end;
+  }
+
+  .ryen-contact-circle {
+    width: 125px;
+  }
+
+  .ryen-contact-text text {
+    font-size: 14px;
+  }
+
+  .ryen-role-description {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 430px) {
+  .ryen-home-content {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .ryen-home-name {
+    font-size: clamp(65px, 15vw, 85px);
+  }
+
+  .ryen-home-bottom {
+    gap: 10px;
+  }
+
+  .ryen-contact-circle {
+    width: 105px;
+  }
+
+  .ryen-contact-arrow {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-marquee-track,
+  .ryen-contact-text {
+    animation: none;
+  }
+}
+
+/* FINAL DESKTOP HERO FIT ADJUSTMENT */
+
+@media (min-width: 769px) {
+  .ryen-home {
+    margin-top: 94px;
+    height: calc(100svh - 94px);
+    min-height: 0;
+  }
+
+  .ryen-home-content {
+    padding-top: 24px;
+    padding-bottom: 18px;
+    gap: 6px;
+  }
+
+  .ryen-home-description p {
+    margin-top: 9px;
+    line-height: 1.65;
+  }
+
+  .ryen-marquee {
+    padding: 7px 0;
+  }
+
+  .ryen-home-name {
+    font-size: clamp(68px, 7.5vw, 122px);
+    line-height: 0.88;
+    margin: 0;
+  }
+
+  .ryen-home-bottom {
+    padding-top: 5px;
+  }
+
+  .ryen-role-description {
+    margin-top: 9px;
+    line-height: 1.6;
+  }
+
+  .ryen-home-link {
+    margin-top: 12px;
+  }
+
+  .ryen-contact-circle {
+    width: clamp(125px, 11vw, 175px);
+  }
+
+  .ryen-home-progress {
+    margin-top: 5px;
+  }
+}
+
+/* =========================================
+   RYEN HERO — MOBILE RESPONSIVE FIX
+========================================= */
+
+@media (max-width: 768px) {
+  .ryen-home {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    margin-top: 70px;
+  }
+
+  .ryen-home-portrait {
+    width: 100%;
+    height: min(92vw, 390px);
+    min-height: 280px;
+    flex: none;
+  }
+
+  .ryen-home-content {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 30px 24px 26px;
+    gap: 22px;
+    overflow: hidden;
+  }
+
+  .ryen-home-description {
+    width: 100%;
+  }
+
+  .ryen-home-description p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .ryen-marquee {
+    padding: 4px 0;
+  }
+
+  .ryen-marquee-track span {
+    font-size: 13px;
+    padding-right: 20px;
+  }
+
+  .ryen-marquee-track b {
+    padding: 0 12px;
+  }
+
+  .ryen-home-name {
+    font-size: clamp(58px, 15vw, 76px);
+    line-height: 0.9;
+    margin: 0;
+  }
+
+  .ryen-home-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 5px;
+  }
+
+  .ryen-home-role {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ryen-home-role p:first-child {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .ryen-home-role p:nth-child(2) {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .ryen-home-link {
+    margin-top: 12px;
+    font-size: 10px;
+  }
+
+  .ryen-contact-circle {
+    width: 94px;
+    height: 94px;
+    min-width: 94px;
+    flex-shrink: 0;
+  }
+
+  .ryen-contact-circle span {
+    font-size: 7px;
+  }
+
+  .ryen-contact-circle svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .ryen-home-progress {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .ryen-home-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .ryen-home-name {
+    font-size: 56px;
+  }
+
+  .ryen-contact-circle {
+    width: 82px;
+    height: 82px;
+    min-width: 82px;
+  }
+}
+
+/* =========================================
+   RYEN — ABOUT SECTION
+========================================= */
+
+.ryen-about {
+  position: relative;
+  padding: 130px 7% 90px;
+  background: #0d0d0c;
+  color: #fff;
+}
+
+.ryen-section-label {
+  display: inline-block;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.ryen-about-heading h2 {
+  margin-top: 25px;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(55px, 8vw, 112px);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+
+.ryen-about-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-about-intro {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 10%;
+  margin-top: 85px;
+}
+
+.ryen-about-copy {
+  max-width: 650px;
+}
+
+.ryen-about-lead {
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.ryen-about-description {
+  margin-top: 25px;
+  max-width: 520px;
+  color: #999;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.ryen-about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 35px;
+  color: #99e836;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.ryen-about-link:hover {
+  color: #fff;
+}
+
+.ryen-about-visual {
+  min-width: 0;
+}
+
+.ryen-about-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 600px;
+  overflow: hidden;
+  background: #191919;
+}
+
+.ryen-about-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(0 0 0 / 85%),
+    transparent 45%
+  );
+}
+
+.ryen-about-location {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ryen-about-location-name,
+.ryen-about-location-city {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ryen-about-location-name {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.ryen-about-location-city {
+  margin-top: 8px;
+  color: #bbb;
+  font-size: 12px;
+}
+
+.ryen-about-timezone {
+  padding: 9px 13px;
+  border: 1px solid rgb(153 232 54 / 40%);
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ryen-about-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 100px;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+}
+
+.ryen-about-card {
+  position: relative;
+  min-height: 245px;
+  padding: 32px 28px;
+  border-right: 1px solid rgb(255 255 255 / 18%);
+}
+
+.ryen-about-card:last-child {
+  border-right: none;
+}
+
+.ryen-about-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #99e836;
+}
+
+.ryen-about-card-top span {
+  color: #777;
+  font-size: 11px;
+}
+
+.ryen-about-card h3 {
+  margin-top: 40px;
+  font-family: "NeueMachina", sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.ryen-about-card p {
+  margin-top: 12px;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ryen-about-card-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #99e836;
+  transition: width 0.4s ease;
+}
+
+.ryen-about-card:hover .ryen-about-card-line {
+  width: 100%;
+}
+
+.ryen-about-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 35px;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+/* About responsive */
+
+@media (max-width: 768px) {
+  .ryen-about {
+    padding: 85px 24px 65px;
+  }
+
+  .ryen-about-intro {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin-top: 50px;
+  }
+
+  .ryen-about-image {
+    max-height: 480px;
+  }
+
+  .ryen-about-highlights {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .ryen-about-card {
+    min-height: 190px;
+    padding: 28px 12px;
+    border-right: none;
+    border-bottom: 1px solid rgb(255 255 255 / 18%);
+  }
+
+  .ryen-about-card:last-child {
+    border-bottom: none;
+  }
+
+  .ryen-about-card h3 {
+    margin-top: 25px;
+  }
+
+  .ryen-about-footer {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-about-card-line {
+    transition: none;
+  }
+}
+
+/* ABOUT SECTION — COMPACT DESKTOP LAYOUT */
+@media (min-width: 769px) {
+  .ryen-about {
+    min-height: calc(100svh - 84px);
+    padding: 45px 7% 25px;
+    overflow: hidden;
+  }
+
+  .ryen-about-heading h2 {
+    font-size: clamp(48px, 4.5vw, 68px);
+    line-height: 0.9;
+  }
+
+  .ryen-about-intro {
+    margin-top: 20px;
+    gap: 7%;
+    align-items: center;
+  }
+
+  .ryen-about-lead {
+    font-size: clamp(16px, 1.35vw, 20px);
+    line-height: 1.4;
+  }
+
+  .ryen-about-description {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  .ryen-about-image {
+    max-height: 280px;
+  }
+
+  .ryen-about-highlights {
+    margin-top: 22px;
+  }
+
+  .ryen-about-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .ryen-about-footer {
+    margin-top: 15px;
+  }
+}
+
+/* ABOUT — FINAL SPACING POLISH */
+@media (min-width: 769px) {
+  .ryen-about {
+    padding-top: 35px;
+    padding-bottom: 18px;
+  }
+
+  .ryen-about-heading h2 {
+    font-size: clamp(46px, 4.2vw, 64px);
+  }
+
+  .ryen-about-intro {
+    margin-top: 12px;
+  }
+
+  .ryen-about-image {
+    max-height: 245px;
+  }
+
+  .ryen-about-highlights {
+    margin-top: 15px;
+  }
+
+  .ryen-about-card {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .ryen-about-footer {
+    margin-top: 10px;
+  }
+}
+
+/* FULL PAGE SCROLL SYSTEM */
+.ryen-snap-container {
+  height: calc(100svh - 82px);
+  margin-top: 82px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: auto;
+}
+
+.ryen-page {
+  min-height: calc(100svh - 82px);
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Home hero already has its own navbar offset */
+.ryen-page:first-child {
+  min-height: calc(100svh - 84px);
+}
+
+.ryen-page > section {
+  width: 100%;
+}
+
+/* Beyond Technology page */
+.ryen-beyond-page {
+  padding: 40px 0;
+}
+
+/* Mobile: natural scrolling for comfortable reading */
+@media (max-width: 768px) {
+  .ryen-snap-container {
+    height: calc(100svh - 70px);
+    margin-top: 70px;
+    scroll-snap-type: y proximity;
+  }
+
+  .ryen-page {
+    min-height: calc(100svh - 70px);
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+
+  .ryen-beyond-page {
+    padding: 35px 0;
+  }
+}
+
+/* ABOUT — FULL PAGE REFINEMENT */
+@media (min-width: 769px) {
+  .ryen-about {
+    padding-top: 25px;
+    padding-bottom: 18px;
+  }
+
+  .ryen-about-heading h2 {
+    font-size: clamp(44px, 4vw, 60px);
+    line-height: 0.88;
+  }
+
+  .ryen-about-intro {
+    margin-top: 8px;
+    gap: 6%;
+  }
+
+  .ryen-about-image {
+    max-height: 215px;
+  }
+
+  .ryen-about-highlights {
+    margin-top: 10px;
+  }
+
+  .ryen-about-card {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .ryen-about-footer {
+    margin-top: 8px;
+  }
+}
+
+/* STATS — FULL SCREEN EDITORIAL DESIGN */
+.ryen-stats {
+  width: 100%;
+  min-height: calc(100svh - 84px);
+  padding: 65px 7% 35px;
+  background: #0d0d0c;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ryen-stats-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.ryen-stats-heading h2 {
+  margin-top: 25px;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(52px, 6vw, 88px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.ryen-stats-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-stats-intro {
+  max-width: 300px;
+  margin-bottom: 8px;
+  color: #a5a5a0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ryen-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 75px;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+}
+
+.ryen-stat-item {
+  min-width: 0;
+  padding: 25px 22px 30px;
+  border-right: 1px solid rgb(255 255 255 / 14%);
+  transition: background 0.3s ease;
+}
+
+.ryen-stat-item:first-child {
+  padding-left: 0;
+}
+
+.ryen-stat-item:last-child {
+  border-right: 0;
+}
+
+.ryen-stat-item:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.ryen-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #99e836;
+}
+
+.ryen-stat-top span {
+  color: #777;
+  font-size: 12px;
+}
+
+.ryen-stat-item h3 {
+  margin-top: 45px;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(27px, 3vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+  overflow-wrap: anywhere;
+}
+
+.ryen-stat-label {
+  margin-top: 15px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.ryen-stat-description {
+  margin-top: 8px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ryen-stats-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 768px) {
+  .ryen-stats {
+    min-height: calc(100svh - 70px);
+    padding: 65px 24px 35px;
+  }
+
+  .ryen-stats-heading {
+    display: block;
+  }
+
+  .ryen-stats-heading h2 {
+    font-size: clamp(45px, 11vw, 65px);
+  }
+
+  .ryen-stats-intro {
+    margin-top: 22px;
+  }
+
+  .ryen-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 40px;
+  }
+
+  .ryen-stat-item {
+    padding: 22px 14px;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+  }
+
+  .ryen-stat-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ryen-stat-item:nth-child(3),
+  .ryen-stat-item:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  .ryen-stat-item:first-child {
+    padding-left: 14px;
+  }
+
+  .ryen-stat-item h3 {
+    margin-top: 28px;
+    font-size: clamp(25px, 7vw, 36px);
+  }
+}
+
+/* FULL PAGE — ALIGNMENT FIX */
+.ryen-page {
+  box-sizing: border-box;
+  min-height: calc(100svh - 84px);
+  height: calc(100svh - 84px);
+  overflow: hidden;
+}
+
+.ryen-page > section {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+/* HOME — REMOVE DUPLICATE NAVBAR OFFSET */
+.ryen-page:first-child .ryen-home {
+  margin-top: 0;
+  height: 100%;
+  min-height: 0;
+}
+
+/* STATS — CENTER CONTENT PROPERLY */
+.ryen-page:nth-child(2) .ryen-stats {
+  min-height: 100%;
+  height: 100%;
+}
+
+/* ABOUT — FIT THE WHOLE SECTION */
+.ryen-page:nth-child(3) .ryen-about {
+  min-height: 100%;
+  height: 100%;
+  padding-top: 22px;
+  padding-bottom: 18px;
+  overflow: hidden;
+}
+
+.ryen-page:nth-child(3) .ryen-about-intro {
+  margin-top: 12px;
+  align-items: center;
+}
+
+/* ABOUT — GIVE PORTRAIT ENOUGH HEIGHT */
+.ryen-page:nth-child(3) .ryen-about-image {
+  height: min(40svh, 340px);
+  max-height: none;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+.ryen-page:nth-child(3) .ryen-about-image img {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* MOBILE — NATURAL SECTION HEIGHT */
+@media (max-width: 768px) {
+  .ryen-page {
+    height: auto;
+    min-height: calc(100svh - 70px);
+    overflow: visible;
+  }
+
+  .ryen-page:first-child .ryen-home {
+    height: auto;
+    min-height: 0;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about-image {
+    height: auto;
+    max-height: 480px;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ABOUT — FINAL FULL-PAGE FIT */
+@media (min-width: 769px) {
+  .ryen-page:nth-child(3) .ryen-about {
+    padding: 15px 7% 12px;
+    justify-content: center;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about-heading h2 {
+    font-size: clamp(42px, 3.6vw, 56px);
+    line-height: 0.86;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about-intro {
+    margin-top: 5px;
+    gap: 5%;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about-image {
+    height: 270px;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about-highlights {
+    margin-top: 8px;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about-card {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .ryen-page:nth-child(3) .ryen-about-footer {
+    margin-top: 6px;
+  }
+}
+
+
+/* =================================
+   BEYOND CODE — FULL PAGE EXPERIENCE
+================================= */
+
+.ryen-creative-container {
+  background: #0d0d0c;
+  color: #fff;
+}
+
+.ryen-creative-container .ryen-page {
+  padding: 35px 7%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.ryen-creative-section {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.ryen-creative-title {
+  margin-top: 22px;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(48px, 6vw, 84px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.ryen-creative-title span {
+  color: #99e836;
+}
+
+.ryen-creative-description {
+  max-width: 520px;
+  margin-top: 18px;
+  color: #a5a5a0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Creative interests */
+.ryen-interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 55px;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+}
+
+.ryen-interest-item {
+  min-height: 205px;
+  padding: 24px;
+  border-right: 1px solid rgb(255 255 255 / 14%);
+  transition: background 0.3s ease;
+}
+
+.ryen-interest-item:first-child {
+  padding-left: 0;
+}
+
+.ryen-interest-item:last-child {
+  border-right: 0;
+}
+
+.ryen-interest-item:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.ryen-interest-number {
+  display: block;
+  margin-bottom: 24px;
+  color: #777;
+  font-size: 12px;
+}
+
+.ryen-interest-item svg {
+  color: #99e836;
+}
+
+.ryen-interest-item h3 {
+  margin-top: 20px;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.ryen-interest-item p {
+  margin-top: 9px;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Artwork gallery */
+.ryen-artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(100px, 1fr));
+  gap: 10px;
+  height: min(53svh, 470px);
+  margin-top: 28px;
+}
+
+.ryen-artwork-item {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #191918;
+}
+
+.ryen-artwork-1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.ryen-artwork-7 {
+  grid-row: span 2;
+}
+
+.ryen-artwork-11 {
+  grid-column: span 2;
+}
+
+.ryen-artwork-caption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 28px 12px 12px;
+  background: linear-gradient(transparent, rgb(0 0 0 / 80%));
+  color: #fff;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ryen-artwork-item:hover .ryen-artwork-caption {
+  opacity: 1;
+}
+
+/* Creative platforms */
+.ryen-platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 65px;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+}
+
+.ryen-platform-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 145px;
+  padding: 24px;
+  border-right: 1px solid rgb(255 255 255 / 14%);
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+  transition: background 0.3s ease;
+}
+
+.ryen-platform-item:first-child {
+  padding-left: 0;
+}
+
+.ryen-platform-item:last-child {
+  border-right: 0;
+}
+
+.ryen-platform-item > span {
+  color: #99e836;
+  font-size: 12px;
+}
+
+.ryen-platform-item h3 {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.ryen-platform-item p {
+  margin-top: 7px;
+  color: #999;
+  font-size: 12px;
+}
+
+.ryen-platform-item svg {
+  margin-left: auto;
+  color: #99e836;
+  transition: transform 0.3s ease;
+}
+
+.ryen-platform-item:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.ryen-platform-item:hover svg {
+  transform: translate(4px, -4px);
+}
+
+/* Poetry page */
+.ryen-poetry-page {
+  overflow-y: auto;
+}
+
+.ryen-poetry-page #poetry {
+  padding: 0;
+  max-width: 1500px;
+}
+
+.ryen-poetry-page .ryen-poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.ryen-poetry-page .ryen-poem-card {
+  padding: 22px;
+  border: 1px solid rgb(255 255 255 / 15%);
+  background: rgb(255 255 255 / 3%);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ryen-creative-container .ryen-page {
+    height: auto;
+    min-height: calc(100svh - 70px);
+    padding: 55px 24px;
+    overflow: visible;
+  }
+
+  .ryen-interest-grid {
+    grid-template-columns: 1fr;
+    margin-top: 35px;
+  }
+
+  .ryen-interest-item,
+  .ryen-interest-item:first-child {
+    padding: 22px 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+  }
+
+  .ryen-artwork-grid {
+    grid-template-rows: repeat(4, 150px);
+    grid-auto-rows: 150px;
+    height: auto;
+  }
+
+  .ryen-artwork-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .ryen-artwork-7 {
+    grid-row: span 1;
+  }
+
+  .ryen-artwork-11 {
+    grid-column: span 2;
+  }
+
+  .ryen-artwork-caption {
+    opacity: 1;
+  }
+
+  .ryen-platform-grid {
+    grid-template-columns: 1fr;
+    margin-top: 35px;
+  }
+
+  .ryen-platform-item,
+  .ryen-platform-item:first-child {
+    padding: 22px 0;
+    border-right: 0;
+  }
+
+  .ryen-poetry-page {
+    overflow: visible;
+  }
+
+  .ryen-poetry-page .ryen-poetry-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ARTWORK — IMAGE VISIBILITY FIX */
+.ryen-artwork-grid > * {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.ryen-artwork-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ryen-artwork-item img {
+  display: block;
+  object-fit: cover;
+}
+
+
+/* Horizontal artwork showcase */
+
+.ryen-artwork-section {
+  overflow: hidden;
+}
+
+.ryen-artwork-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 48px;
+}
+
+.ryen-gallery-controls {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+.ryen-gallery-controls button {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ryen-border);
+  border-radius: 50%;
+  color: var(--ryen-text);
+  transition: 0.3s ease;
+}
+
+.ryen-gallery-controls button:hover {
+  background: var(--ryen-accent);
+  color: #0d0d0c;
+  border-color: var(--ryen-accent);
+}
+
+.ryen-artwork-track {
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 18px;
+}
+
+.ryen-artwork-track::-webkit-scrollbar {
+  display: none;
+}
+
+.ryen-artwork-slide {
+  flex: 0 0 28%;
+  min-width: 280px;
+  scroll-snap-align: start;
+}
+
+.ryen-artwork-featured {
+  flex-basis: 58%;
+}
+
+.ryen-artwork-image {
+  position: relative;
+  width: 100%;
+  height: clamp(360px, 36vw, 560px);
+  overflow: hidden;
+  background: #171717;
+}
+
+.ryen-artwork-image img {
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ryen-artwork-slide:hover .ryen-artwork-image img {
+  transform: scale(1.045);
+}
+
+.ryen-artwork-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgb(0 0 0 / 78%),
+    transparent 35%
+  );
+  pointer-events: none;
+}
+
+.ryen-artwork-caption {
+  position: absolute;
+  inset: auto 24px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+}
+
+.ryen-artwork-caption span {
+  color: var(--ryen-accent);
+  font-size: 12px;
+}
+
+.ryen-artwork-caption h3 {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.ryen-artwork-caption svg {
+  color: var(--ryen-accent);
+}
+
+@media (max-width: 768px) {
+  .ryen-artwork-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .ryen-gallery-controls {
+    padding-bottom: 0;
+  }
+
+  .ryen-gallery-controls button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .ryen-artwork-track {
+    gap: 14px;
+    margin-right: -24px;
+    padding-right: 24px;
+  }
+
+  .ryen-artwork-slide,
+  .ryen-artwork-featured {
+    flex: 0 0 82%;
+    min-width: 0;
+  }
+
+  .ryen-artwork-image {
+    height: 430px;
+  }
+
+  .ryen-artwork-caption {
+    inset: auto 16px 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .ryen-artwork-image {
+    height: 360px;
+  }
+}
+
+/* Preserve the complete artwork without cropping */
+
+.ryen-artwork-slide,
+.ryen-artwork-featured {
+  flex: 0 0 28%;
+  min-width: 280px;
+}
+
+.ryen-artwork-image {
+  height: auto;
+  aspect-ratio: 3 / 4;
+  background: #151514;
+}
+
+.ryen-artwork-image img {
+  object-fit: contain !important;
+  transition: transform 0.7s ease;
+}
+
+.ryen-artwork-overlay {
+  background: linear-gradient(
+    to top,
+    rgb(0 0 0 / 65%),
+    transparent 30%
+  );
+}
+
+@media (max-width: 768px) {
+  .ryen-artwork-slide,
+  .ryen-artwork-featured {
+    flex: 0 0 82%;
+    min-width: 0;
+  }
+
+  .ryen-artwork-image {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+}
+
+/* POETRY SECTION */
+
+.ryen-poetry-section {
+  background: #0d0d0c;
+  color: #fff;
+  padding: 110px 7% 100px;
+}
+
+.ryen-poetry-section .ryen-creative-title {
+  max-width: 1000px;
+}
+
+.ryen-poetry-section .ryen-creative-description {
+  max-width: 650px;
+  margin-top: 25px;
+}
+
+.ryen-poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 65px;
+  align-items: start;
+}
+
+.ryen-poem-card {
+  padding: 34px;
+  border: 1px solid rgb(255 255 255 / 14%);
+  background: rgb(255 255 255 / 2%);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.ryen-poem-card:hover {
+  border-color: #99e836;
+  background: rgb(255 255 255 / 3%);
+}
+
+.ryen-poem-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #99e836;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.ryen-poem-card h3 {
+  margin-top: 28px;
+  margin-bottom: 26px;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(23px, 2.2vw, 32px);
+  font-weight: 500;
+}
+
+.ryen-poem-content {
+  overflow: hidden;
+}
+
+.ryen-poem-content p {
+  white-space: pre-line;
+  color: #aaa9a5;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  line-height: 2.1;
+}
+
+.ryen-poem-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  color: #99e836;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.ryen-poem-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.ryen-poetry-footer {
+  margin-top: 90px;
+  padding-top: 30px;
+  border-top: 1px solid rgb(255 255 255 / 16%);
+  text-align: center;
+}
+
+.ryen-poetry-footer p {
+  font-size: clamp(20px, 3vw, 34px);
+  color: #fff;
+}
+
+.ryen-poetry-footer span {
+  display: block;
+  margin-top: 18px;
+  color: #99e836;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .ryen-poetry-section {
+    padding: 80px 24px 65px;
+  }
+
+  .ryen-poetry-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 42px;
+  }
+
+  .ryen-poem-card {
+    padding: 25px 22px;
+  }
+
+  .ryen-poetry-footer {
+    margin-top: 60px;
+  }
+}
+
+/* ARTWORK SECTION — FIT FULL SCREEN */
+
+@media (min-width: 769px) {
+  .ryen-artwork-page {
+    overflow: hidden;
+  }
+
+  .ryen-artwork-page .ryen-artwork-heading {
+    margin-bottom: 24px;
+  }
+
+  .ryen-artwork-page .ryen-artwork-image {
+    height: clamp(220px, 30svh, 300px);
+    aspect-ratio: auto;
+  }
+
+  .ryen-artwork-page .ryen-artwork-track {
+    padding-bottom: 8px;
+  }
+
+  .ryen-artwork-page .ryen-artwork-slide,
+  .ryen-artwork-page .ryen-artwork-featured {
+    height: auto;
+  }
+
+  .ryen-artwork-page .ryen-artwork-section > div:last-child {
+    margin-top: 12px;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .ryen-artwork-page .ryen-artwork-heading {
+    margin-bottom: 16px;
+  }
+
+  .ryen-artwork-page .ryen-artwork-image {
+    height: clamp(200px, 27svh, 270px);
+  }
+
+  .ryen-artwork-page .ryen-artwork-track {
+    padding-bottom: 0;
+  }
+
+  .ryen-artwork-page .ryen-artwork-section > div:last-child {
+    margin-top: 8px;
+    padding-bottom: 12px;
+  }
+}
+
+
+/* Center the final poem card */
+@media (min-width: 769px) {
+  .ryen-poetry-grid > :last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 11px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .ryen-poetry-grid > :last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+
+/* Navigation scrollbar refinement */
+.ryen-nav-panel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+}
+
+.ryen-nav-panel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.ryen-nav-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ryen-nav-panel::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+}
+
+.ryen-nav-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.6);
+}.ryen-snap-container {
+  background: #0d0d0c;
+}
+
+.ryen-page {
+  background: #0d0d0c;
+}
+@media (max-width: 768px) {
+  .ryen-home-bottom {
+    align-items: flex-end;
+    gap: 12px;
+    padding-top: 20px;
+  }
+
+  .ryen-home-role {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .ryen-contact-circle {
+    flex-shrink: 0;
+    width: 76px;
+    height: 76px;
+  }
+
+  .ryen-home-link {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   RYEN — SELECTED PROJECTS GALLERY
+========================================= */
+
+.ryen-projects-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 35px 5vw 28px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.ryen-projects-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.ryen-projects-label {
+  display: block;
+  margin-bottom: 14px;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.ryen-projects-heading h2 {
+  margin: 0;
+  font-size: clamp(38px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.ryen-projects-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-projects-controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ryen-projects-controls button {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  color: white;
+  transition: .3s ease;
+}
+
+.ryen-projects-controls button:hover {
+  background: #99e836;
+  color: #0d0d0c;
+  border-color: #99e836;
+}
+
+.ryen-projects-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0 18px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.ryen-projects-track::-webkit-scrollbar {
+  display: none;
+}
+
+.ryen-project-slide {
+  flex: 0 0 31%;
+  min-width: 280px;
+  scroll-snap-align: start;
+}
+
+.ryen-project-slide-wide {
+  flex-basis: 42%;
+}
+
+.ryen-project-image-link {
+  display: block;
+}
+
+.ryen-project-image {
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 27vw, 360px);
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-project-img {
+  object-fit: cover;
+  object-position: top;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.ryen-project-slide:hover .ryen-project-img {
+  transform: scale(1.045);
+}
+
+.ryen-project-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #99e836;
+  font-size: 90px;
+  font-weight: 800;
+}
+
+.ryen-project-highlight {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  padding: 7px 12px;
+  background: #99e836;
+  color: #0d0d0c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.ryen-project-view {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  background: #99e836;
+  color: #0d0d0c;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: .3s ease;
+}
+
+.ryen-project-slide:hover .ryen-project-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ryen-project-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 18px;
+}
+
+.ryen-project-category {
+  display: block;
+  margin-bottom: 9px;
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.ryen-project-info h3 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.ryen-project-info p {
+  margin-top: 6px;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ryen-project-number {
+  color: #777;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.ryen-projects-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.16);
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ryen-projects-section {
+    padding: 30px 24px 24px;
+  }
+
+  .ryen-projects-heading {
+    align-items: flex-end;
+    margin-bottom: 26px;
+  }
+
+  .ryen-projects-heading h2 {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+
+  .ryen-projects-controls {
+    gap: 6px;
+  }
+
+  .ryen-projects-controls button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .ryen-projects-track {
+    gap: 16px;
+  }
+
+  .ryen-project-slide,
+  .ryen-project-slide-wide {
+    flex: 0 0 84%;
+    min-width: 0;
+  }
+
+  .ryen-project-image {
+    height: 230px;
+  }
+
+  .ryen-project-view {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .ryen-project-info h3 {
+    font-size: 20px;
+  }
+
+  .ryen-projects-footer {
+    font-size: 9px;
+    letter-spacing: .6px;
+  }
+}
+
+
+/* Fit Selected Works inside the desktop screen */
+@media (min-width: 769px) {
+  .ryen-page:nth-child(7) .ryen-projects-section {
+    padding-top: 22px;
+    padding-bottom: 14px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-projects-heading {
+    margin-bottom: 22px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-project-image {
+    height: clamp(220px, 30svh, 280px);
+  }
+
+  .ryen-page:nth-child(7) .ryen-project-info {
+    padding-top: 12px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-projects-footer {
+    margin-top: 8px;
+    padding-top: 10px;
+  }
+}
+
+
+/* RYEN — PROJECT CATEGORY CARDS */
+
+.ryen-category-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px 5vw 18px;
+  color: #fff;
+}
+
+.ryen-category-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.ryen-category-heading h2 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 800;
+  line-height: .92;
+  letter-spacing: -.065em;
+}
+
+.ryen-category-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-category-heading > p {
+  max-width: 280px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ryen-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 24px;
+}
+
+.ryen-category-card {
+  display: block;
+  min-width: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.ryen-category-image {
+  position: relative;
+  width: 100%;
+  height: clamp(145px, 22vh, 230px);
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-category-img {
+  object-fit: cover;
+  object-position: top;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.ryen-category-card:hover .ryen-category-img {
+  transform: scale(1.045);
+}
+
+.ryen-category-count {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 7px 10px;
+  background: #99e836;
+  color: #0d0d0c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .7px;
+}
+
+.ryen-category-arrow {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: #99e836;
+  color: #0d0d0c;
+  transition: transform .3s ease;
+}
+
+.ryen-category-card:hover .ryen-category-arrow {
+  transform: rotate(45deg);
+}
+
+.ryen-category-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #99e836;
+  font-size: 70px;
+  font-weight: 800;
+}
+
+.ryen-category-info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.ryen-category-number {
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ryen-category-info h3 {
+  margin: 5px 0;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.ryen-category-info p {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (min-width: 769px) {
+  .ryen-page:nth-child(7) .ryen-category-section {
+    padding-top: 18px;
+    padding-bottom: 12px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-heading {
+    margin-bottom: 20px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-image {
+    height: clamp(130px, 19svh, 190px);
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-grid {
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ryen-category-section {
+    padding: 32px 20px 24px;
+  }
+
+  .ryen-category-heading {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .ryen-category-heading h2 {
+    font-size: clamp(38px, 10vw, 50px);
+  }
+
+  .ryen-category-heading > p {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .ryen-category-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .ryen-category-image {
+    height: 190px;
+  }
+
+  .ryen-category-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .ryen-category-info h3 {
+    font-size: 21px;
+  }
+}
+
+
+/* CATEGORY SECTION — DESKTOP SCREEN FIT */
+
+@media (min-width: 769px) {
+  .ryen-page:nth-child(7) .ryen-category-section {
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-heading {
+    align-items: flex-end;
+    margin-bottom: 16px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-heading h2 {
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: .88;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-heading > p {
+    font-size: 12px;
+    max-width: 260px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-grid {
+    gap: 12px 24px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-image {
+    height: clamp(105px, 15svh, 145px);
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-info {
+    padding-top: 7px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-info h3 {
+    font-size: 19px;
+    margin: 3px 0;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-info p {
+    font-size: 11px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-projects-footer {
+    margin-top: 10px;
+    padding-top: 9px;
+  }
+}
+
+
+/* RYEN — CATEGORY SHOWCASE */
+
+.ryen-category-showcase {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px 5vw 20px;
+  color: #fff;
+}
+
+.ryen-showcase-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.ryen-showcase-heading h2 {
+  margin: 0;
+  font-size: clamp(42px, 5.5vw, 70px);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.065em;
+}
+
+.ryen-showcase-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-showcase-controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ryen-showcase-controls button {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 50%;
+  color: #fff;
+  transition: .3s ease;
+}
+
+.ryen-showcase-controls button:hover:not(:disabled) {
+  background: #99e836;
+  border-color: #99e836;
+  color: #0d0d0c;
+}
+
+.ryen-showcase-controls button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+.ryen-category-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 2px 0 12px;
+}
+
+.ryen-category-track::-webkit-scrollbar {
+  display: none;
+}
+
+.ryen-category-slide {
+  flex: 0 0 86%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.ryen-category-visual {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  min-height: 320px;
+  color: #fff;
+  text-decoration: none;
+  background: #202020;
+}
+
+.ryen-category-cover {
+  position: relative;
+  min-width: 0;
+  min-height: 320px;
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-category-cover-img {
+  object-fit: cover;
+  object-position: top center;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.ryen-category-visual:hover .ryen-category-cover-img {
+  transform: scale(1.035);
+}
+
+.ryen-category-cover-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #99e836;
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.ryen-category-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  padding: 36px;
+  background: #202020;
+}
+
+.ryen-category-index {
+  margin-bottom: 18px;
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ryen-category-details h3 {
+  margin: 0 0 16px;
+  font-size: clamp(27px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.055em;
+}
+
+.ryen-category-details p {
+  max-width: 420px;
+  margin: 0;
+  color: #b0b0b0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ryen-category-total {
+  margin-top: 26px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ryen-category-explore {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 26px;
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ryen-showcase-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.ryen-showcase-progress {
+  position: relative;
+  width: 150px;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255,255,255,.2);
+}
+
+.ryen-showcase-progress span {
+  display: block;
+  height: 100%;
+  background: #99e836;
+  transition: width .35s ease;
+}
+
+.ryen-showcase-count {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ryen-showcase-total {
+  margin-left: auto;
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* Desktop full-screen fit */
+@media (min-width: 769px) {
+  .ryen-page:nth-child(7) .ryen-category-showcase {
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-showcase-heading {
+    margin-bottom: 20px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-slide {
+    flex-basis: 86%;
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-visual {
+    min-height: clamp(250px, 43svh, 370px);
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-cover {
+    min-height: clamp(250px, 43svh, 370px);
+  }
+
+  .ryen-page:nth-child(7) .ryen-category-details {
+    padding: 28px;
+  }
+
+  .ryen-page:nth-child(7) .ryen-showcase-footer {
+    margin-top: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ryen-category-showcase {
+    padding: 30px 20px 24px;
+  }
+
+  .ryen-showcase-heading {
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  .ryen-showcase-heading h2 {
+    font-size: clamp(34px, 9vw, 46px);
+  }
+
+  .ryen-showcase-controls {
+    gap: 6px;
+  }
+
+  .ryen-showcase-controls button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ryen-category-track {
+    gap: 16px;
+  }
+
+  .ryen-category-slide {
+    flex-basis: 88%;
+  }
+
+  .ryen-category-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .ryen-category-cover {
+    min-height: 210px;
+    height: 210px;
+  }
+
+  .ryen-category-details {
+    min-height: 230px;
+    padding: 22px;
+  }
+
+  .ryen-category-details h3 {
+    font-size: 27px;
+  }
+
+  .ryen-category-details p {
+    font-size: 12px;
+  }
+
+  .ryen-category-total {
+    margin-top: 18px;
+  }
+
+  .ryen-category-explore {
+    padding-top: 20px;
+  }
+
+  .ryen-showcase-progress {
+    width: 90px;
+  }
+}
+
+/* RYEN — EDITORIAL PROJECT CATEGORY PAGE */
+
+.ryen-category-page {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 130px 5vw 90px;
+  color: #fff;
+  background: #0d0d0c;
+}
+
+.ryen-category-page-header {
+  margin-bottom: 75px;
+}
+
+.ryen-category-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 55px;
+  color: #999;
+  font-size: 13px;
+  transition: color .3s ease;
+}
+
+.ryen-category-back:hover {
+  color: #99e836;
+}
+
+.ryen-category-page-header h1 {
+  max-width: 1050px;
+  margin: 22px 0;
+  font-size: clamp(54px, 8vw, 112px);
+  font-weight: 800;
+  line-height: .91;
+  letter-spacing: -.075em;
+}
+
+.ryen-category-page-header h1 span {
+  color: #99e836;
+}
+
+.ryen-category-page-header > p {
+  max-width: 620px;
+  color: #999;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.ryen-category-project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+}
+
+.ryen-category-project-card {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.ryen-category-project-card:nth-child(even) {
+  grid-template-columns: .75fr 1.25fr;
+}
+
+.ryen-category-project-card:nth-child(even)
+.ryen-category-project-image {
+  order: 2;
+}
+
+.ryen-category-project-card:nth-child(even)
+.ryen-category-project-info {
+  order: 1;
+}
+
+.ryen-category-project-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(320px, 38vw, 540px);
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-category-project-img {
+  object-fit: cover;
+  object-position: top;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.ryen-category-project-card:hover
+.ryen-category-project-img {
+  transform: scale(1.045);
+}
+
+.ryen-category-cover-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: #99e836;
+  font-size: 100px;
+  font-weight: 800;
+}
+
+.ryen-category-project-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 50%;
+  background: #99e836;
+  color: #0d0d0c;
+  transition: transform .3s ease;
+}
+
+.ryen-category-project-card:hover
+.ryen-category-project-arrow {
+  transform: rotate(45deg);
+}
+
+.ryen-category-project-info {
+  padding: 25px 0;
+}
+
+.ryen-category-project-number {
+  color: #99e836;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ryen-category-project-info h2 {
+  margin: 24px 0 14px;
+  font-size: clamp(32px, 4vw, 58px);
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+
+.ryen-category-project-info > p {
+  max-width: 450px;
+  color: #999;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ryen-category-technologies,
+.ryen-category-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.ryen-category-technologies span {
+  padding: 8px 13px;
+  border: 1px solid rgba(255,255,255,.18);
+  color: #aaa;
+  font-size: 11px;
+}
+
+.ryen-category-project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 15px;
+  color: #99e836;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .ryen-category-page {
+    padding: 105px 20px 55px;
+  }
+
+  .ryen-category-page-header {
+    margin-bottom: 50px;
+  }
+
+  .ryen-category-back {
+    margin-bottom: 38px;
+  }
+
+  .ryen-category-page-header h1 {
+    font-size: clamp(43px, 11vw, 68px);
+  }
+
+  .ryen-category-page-header > p {
+    font-size: 15px;
+  }
+
+  .ryen-category-project-grid {
+    gap: 65px;
+  }
+
+  .ryen-category-project-card,
+  .ryen-category-project-card:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ryen-category-project-card:nth-child(even)
+  .ryen-category-project-image,
+  .ryen-category-project-card:nth-child(even)
+  .ryen-category-project-info {
+    order: initial;
+  }
+
+  .ryen-category-project-image {
+    height: 260px;
+  }
+
+  .ryen-category-project-info {
+    padding: 10px 0;
+  }
+
+  .ryen-category-project-info h2 {
+    margin: 14px 0 9px;
+    font-size: 30px;
+  }
+
+  .ryen-category-project-arrow {
+    width: 44px;
+    height: 44px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+
+/* Category heading refinement */
+.ryen-category-page-header h1 {
+  max-width: 1350px;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+}
+
+.ryen-category-page-header {
+  margin-bottom: 55px;
+}
+
+/* Preserve full project screenshots */
+.ryen-category-project-image {
+  height: clamp(300px, 34vw, 460px);
+  background: #111;
+}
+
+.ryen-category-project-img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* RYEN — EDITORIAL PROJECT HOVER EFFECTS */
+
+.ryen-category-project-image {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ryen-category-project-img {
+  transition:
+    transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 500ms ease;
+}
+
+.ryen-category-project-card:hover
+.ryen-category-project-img {
+  transform: scale(1.035);
+  filter: brightness(0.82);
+}
+
+.ryen-category-project-arrow {
+  transition:
+    transform 400ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 300ms ease;
+}
+
+.ryen-category-project-card:hover
+.ryen-category-project-arrow {
+  transform: rotate(45deg);
+  background-color: #ffffff;
+  color: #0d0d0c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-category-project-img,
+  .ryen-category-project-arrow {
+    transition: none;
+  }
+}
+
+
+/* RYEN — PROJECT DETAIL EDITORIAL HEADER */
+
+.ryen-project-detail-page {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 130px 5vw 90px;
+  background: #0d0d0c;
+  color: #fff;
+}
+
+.ryen-project-detail-header {
+  margin-bottom: 65px;
+}
+
+.ryen-project-detail-heading h1 {
+  margin: 25px 0 60px;
+  font-size: clamp(60px, 10vw, 145px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  overflow-wrap: anywhere;
+}
+
+.ryen-project-detail-heading h1 span {
+  color: #99e836;
+}
+
+.ryen-project-detail-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.ryen-project-detail-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ryen-project-detail-intro h2 {
+  max-width: 500px;
+  font-size: clamp(28px, 3.5vw, 50px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.ryen-project-detail-summary p {
+  max-width: 550px;
+  margin-bottom: 25px;
+  color: #999;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+  .ryen-project-detail-page {
+    padding: 105px 20px 55px;
+  }
+
+  .ryen-project-detail-header {
+    margin-bottom: 40px;
+  }
+
+  .ryen-project-detail-heading h1 {
+    margin: 22px 0 35px;
+    font-size: clamp(46px, 12vw, 75px);
+  }
+
+  .ryen-project-detail-intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .ryen-project-detail-intro h2 {
+    font-size: 30px;
+  }
+
+  .ryen-project-detail-summary p {
+    font-size: 14px;
+  }
+}
+/* PROJECT DETAIL — EDITORIAL HEADER */
+.ryen-project-detail-header {
+  margin-bottom: 55px;
+}
+
+.ryen-project-detail-heading {
+  width: 100%;
+}
+
+.ryen-project-detail-heading h1 {
+  max-width: 1200px;
+  margin: 25px 0 45px;
+  font-size: clamp(60px, 9vw, 130px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  overflow-wrap: anywhere;
+}
+
+.ryen-project-detail-heading h1 span {
+  color: #99e836;
+}
+
+/* PROJECT DETAIL — LARGE COVER IMAGE */
+.ryen-project-cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(380px, 58vw, 760px);
+  max-height: 75svh;
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-project-cover-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.ryen-project-cover-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  left: 24px;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .ryen-project-detail-header {
+    margin-bottom: 35px;
+  }
+
+  .ryen-project-detail-heading h1 {
+    margin: 22px 0 30px;
+    font-size: clamp(46px, 12vw, 75px);
+  }
+
+  .ryen-project-cover {
+    height: 58svh;
+    min-height: 300px;
+    max-height: 500px;
+  }
+
+  .ryen-project-cover-caption {
+    bottom: 14px;
+    left: 14px;
+  }
+}
+
+
+/* =========================================
+   RYEN — PROJECT CASE STUDY
+========================================= */
+
+.ryen-project-detail {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0d0d0c;
+  color: #fff;
+}
+
+.ryen-project-detail-inner {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 30px 5vw 80px;
+}
+
+/* Cover image */
+
+.ryen-project-cover {
+  position: relative;
+  width: 100%;
+  height: min(75vw, 760px);
+  min-height: 380px;
+  margin: 0 0 130px;
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-project-cover-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.ryen-project-cover-caption {
+  position: absolute;
+  right: 24px;
+  bottom: 22px;
+  z-index: 2;
+  padding: 9px 14px;
+  background: #99e836;
+  color: #0d0d0c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ryen-project-cover-placeholder {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #99e836;
+}
+
+/* Additional project images */
+
+.ryen-project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 130px;
+}
+
+.ryen-project-gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-project-gallery-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform .7s ease;
+}
+
+.ryen-project-gallery-item:hover .ryen-project-gallery-image {
+  transform: scale(1.025);
+}
+
+/* Editorial overview */
+
+.ryen-project-overview-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  padding: 30px 0 130px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.ryen-project-section-heading h2 {
+  margin: 24px 0 0;
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.065em;
+}
+
+.ryen-project-section-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-project-section-label {
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ryen-project-overview-copy {
+  padding-top: 5px;
+}
+
+.ryen-project-overview-copy h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ryen-project-overview-copy > p {
+  max-width: 650px;
+  color: #aaa;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.ryen-project-tech-block {
+  margin-top: 55px;
+}
+
+.ryen-project-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.ryen-project-tech-tags span {
+  padding: 12px 17px;
+  border: 1px solid rgba(255,255,255,.2);
+  color: #ccc;
+  font-size: 13px;
+}
+
+/* Architecture and system diagrams */
+
+.ryen-project-special-section {
+  margin: 0 0 130px;
+  padding-top: 35px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.ryen-project-special-section > .ryen-project-section-label {
+  margin-bottom: 30px;
+}
+
+.ryen-project-section-title {
+  margin: 20px 0 35px;
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 800;
+  letter-spacing: -.055em;
+}
+
+.ryen-project-special-section img {
+  max-width: 100%;
+}
+
+/* Features */
+
+.ryen-project-content-section {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 10%;
+  padding: 55px 0 130px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.ryen-project-feature-list,
+.ryen-project-challenge-list {
+  width: 100%;
+}
+
+.ryen-project-feature {
+  display: grid;
+  grid-template-columns: 55px 1fr 25px;
+  align-items: center;
+  gap: 18px;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.ryen-project-feature-number,
+.ryen-project-challenge > span {
+  color: #99e836;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ryen-project-feature p,
+.ryen-project-challenge p {
+  color: #ddd;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.ryen-project-feature-mark {
+  color: #99e836;
+  font-size: 20px;
+}
+
+/* API documentation */
+
+.ryen-project-api-content {
+  min-width: 0;
+}
+
+.ryen-project-section-description {
+  margin-bottom: 30px;
+  color: #aaa;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.ryen-project-api-item {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.ryen-project-api-route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.ryen-project-method {
+  min-width: 75px;
+  padding: 7px 10px;
+  background: rgba(153,232,54,.12);
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.ryen-project-api-route code {
+  color: #fff;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.ryen-project-api-item > p {
+  margin-top: 12px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Metrics */
+
+.ryen-project-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 30px;
+}
+
+.ryen-project-metric {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.ryen-project-metric-value {
+  margin: 18px 0 8px;
+  color: #fff;
+  font-size: clamp(40px, 5vw, 70px);
+  font-weight: 800;
+  letter-spacing: -.06em;
+}
+
+.ryen-project-metric-label {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Engineering challenges */
+
+.ryen-project-challenge {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  gap: 18px;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+/* Final CTA */
+
+.ryen-project-cta {
+  padding: 100px 0 110px;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.ryen-project-cta h2 {
+  margin: 25px 0 40px;
+  font-size: clamp(55px, 9vw, 125px);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.075em;
+}
+
+.ryen-project-cta h2 span {
+  color: #99e836;
+}
+
+.ryen-project-cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Previous / next project */
+
+.ryen-project-pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-top: 35px;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.ryen-project-pagination-link {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.ryen-project-pagination-next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.ryen-project-pagination-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ryen-project-pagination-link strong {
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -.04em;
+  transition: color .3s ease;
+}
+
+.ryen-project-pagination-link:hover strong {
+  color: #99e836;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .ryen-project-detail-inner {
+    padding: 22px 24px 55px;
+  }
+
+  .ryen-project-cover {
+    height: 65vw;
+    min-height: 240px;
+    margin-bottom: 75px;
+  }
+
+  .ryen-project-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 75px;
+  }
+
+  .ryen-project-overview-layout,
+  .ryen-project-content-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 35px 0 75px;
+  }
+
+  .ryen-project-section-heading h2 {
+    font-size: clamp(45px, 12vw, 68px);
+  }
+
+  .ryen-project-overview-copy > p {
+    font-size: 15px;
+  }
+
+  .ryen-project-special-section {
+    margin-bottom: 75px;
+  }
+
+  .ryen-project-feature {
+    grid-template-columns: 35px 1fr 20px;
+    gap: 10px;
+  }
+
+  .ryen-project-feature p,
+  .ryen-project-challenge p {
+    font-size: 14px;
+  }
+
+  .ryen-project-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .ryen-project-cta {
+    padding: 70px 0;
+  }
+
+  .ryen-project-pagination {
+    gap: 15px;
+  }
+
+  .ryen-project-pagination-link strong {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================
+   RYEN — ACHIEVEMENTS EDITORIAL LAYOUT
+========================================= */
+
+.ryen-credential-card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 100px);
+  margin-bottom: 110px;
+  color: #fff;
+}
+
+.ryen-credential-reversed {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+.ryen-credential-reversed .ryen-credential-media {
+  order: 2;
+}
+
+.ryen-credential-reversed .ryen-credential-content {
+  order: 1;
+}
+
+.ryen-credential-media {
+  position: relative;
+  display: block;
+  min-width: 0;
+  height: clamp(300px, 38vw, 570px);
+  overflow: hidden;
+  background: #151514;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.ryen-credential-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.ryen-credential-image img {
+  object-fit: contain;
+  transition: transform .7s ease;
+}
+
+.ryen-credential-media:hover .ryen-credential-image img {
+  transform: scale(1.035);
+}
+
+.ryen-credential-pdf {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.ryen-credential-open {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 50%;
+  background: #99e836;
+  color: #0d0d0c;
+  transition: transform .3s ease;
+}
+
+.ryen-credential-media:hover .ryen-credential-open {
+  transform: rotate(45deg);
+}
+
+.ryen-credential-content {
+  min-width: 0;
+  padding: 25px 0;
+}
+
+.ryen-credential-number,
+.ryen-credential-category {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ryen-credential-number {
+  margin-bottom: 35px;
+  color: #99e836;
+}
+
+.ryen-credential-category {
+  margin-bottom: 16px;
+  color: #999;
+}
+
+.ryen-credential-content h3 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 58px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -.055em;
+  overflow-wrap: anywhere;
+}
+
+.ryen-credential-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  color: #99e836;
+  font-size: 14px;
+  font-weight: 700;
+  transition: gap .3s ease;
+}
+
+.ryen-credential-link:hover {
+  gap: 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ryen-credential-card,
+  .ryen-credential-reversed {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 65px;
+  }
+
+  .ryen-credential-reversed .ryen-credential-media,
+  .ryen-credential-reversed .ryen-credential-content {
+    order: initial;
+  }
+
+  .ryen-credential-media {
+    height: 300px;
+  }
+
+  .ryen-credential-content {
+    padding: 5px 0;
+  }
+
+  .ryen-credential-number {
+    margin-bottom: 20px;
+  }
+
+  .ryen-credential-content h3 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .ryen-credential-link {
+    margin-top: 20px;
+  }
+}
+
+
+/* =====================================
+   RYEN — ACHIEVEMENTS & CREDENTIALS
+===================================== */
+
+.ryen-credential-card {
+  min-width: 0;
+  color: #fff;
+}
+
+.ryen-credential-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(230px, 28vw, 380px);
+  overflow: hidden;
+  background: #151514;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.ryen-credential-image {
+  object-fit: contain;
+  padding: 12px;
+  transition: transform .6s ease;
+}
+
+.ryen-credential-card:hover .ryen-credential-image {
+  transform: scale(1.035);
+}
+
+.ryen-credential-pdf {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #151514;
+  pointer-events: none;
+}
+
+.ryen-credential-number {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  padding: 7px 10px;
+  background: #99e836;
+  color: #0d0d0c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.ryen-credential-open {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 50%;
+  background: #99e836;
+  color: #0d0d0c;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: .3s ease;
+}
+
+.ryen-credential-card:hover .ryen-credential-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ryen-credential-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0 26px;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+}
+
+.ryen-credential-category {
+  display: block;
+  margin-bottom: 9px;
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ryen-credential-info h3 {
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+
+.ryen-credential-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 7px;
+  color: #99e836;
+  font-size: 12px;
+  font-weight: 700;
+  transition: opacity .2s ease;
+}
+
+.ryen-credential-link:hover {
+  opacity: .7;
+}
+
+@media (max-width: 768px) {
+  .ryen-credential-preview {
+    height: 250px;
+  }
+
+  .ryen-credential-info {
+    padding: 15px 0 22px;
+  }
+
+  .ryen-credential-info h3 {
+    font-size: 18px;
+  }
+
+  .ryen-credential-open {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* RYEN — ACHIEVEMENT CREDENTIAL CARDS */
+
+.ryen-credential-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+}
+
+.ryen-credential-preview {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #191919;
+}
+
+.ryen-credential-image {
+  object-fit: contain !important;
+  padding: 12px;
+}
+
+.ryen-credential-pdf {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #191919;
+}
+
+.ryen-credential-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: grid;
+  width: 44px;
+  height: 38px;
+  place-items: center;
+  background: #99e836;
+  color: #0d0d0c;
+  font-weight: 800;
+}
+
+.ryen-credential-open {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+}
+
+.ryen-credential-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 150px;
+  padding: 24px;
+}
+
+.ryen-credential-info h3 {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.ryen-credential-category {
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.ryen-credential-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #99e836;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .ryen-credential-preview {
+    aspect-ratio: 4 / 3;
+  }
+
+  .ryen-credential-info {
+    min-height: 130px;
+    padding: 18px;
+  }
+}
+
+/* RYEN — ACHIEVEMENTS PAGE HEADER */
+
+.ryen-achievements-header {
+  width: 100%;
+  margin: 0 0 100px;
+}
+
+.ryen-achievements-eyebrow {
+  margin-bottom: 24px;
+}
+
+.ryen-achievements-eyebrow span {
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.ryen-achievements-title {
+  max-width: 1200px;
+  margin: 0;
+  color: #fff;
+  font-family: "NeueMachina", sans-serif;
+  font-size: clamp(54px, 8vw, 112px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.075em;
+}
+
+.ryen-achievements-title span {
+  color: #99e836;
+}
+
+.ryen-achievements-description {
+  max-width: 720px;
+  margin-top: 30px;
+  color: #a1a1aa;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.ryen-achievements-count {
+  margin-top: 20px;
+  color: #99e836;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .ryen-achievements-header {
+    margin-bottom: 65px;
+  }
+
+  .ryen-achievements-title {
+    font-size: clamp(42px, 11vw, 68px);
+    line-height: 1.02;
+  }
+
+  .ryen-achievements-description {
+    margin-top: 22px;
+    font-size: 15px;
+  }
+}
+
+/* RYEN — ACHIEVEMENTS FOOTER NAVIGATION */
+
+.ryen-achievements-footer {
+  width: 100%;
+  margin-top: 100px;
+  padding: 30px 0 45px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.ryen-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ryen-back-arrow {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.ryen-back-link:hover {
+  color: #fff;
+}
+
+.ryen-back-link:hover .ryen-back-arrow {
+  transform: translateX(-6px);
+}
+
+@media (max-width: 768px) {
+  .ryen-achievements-footer {
+    margin-top: 65px;
+    padding: 24px 0 35px;
+  }
+}
+
+
+/* RYEN — HOMEPAGE BEYOND TECHNOLOGY */
+
+.ryen-beyond-page {
+  background: #0d0d0c;
+}
+
+.ryen-beyond-home {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 45px 6vw;
+  color: #fff;
+}
+
+.ryen-beyond-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 7vw;
+}
+
+.ryen-beyond-main {
+  max-width: 760px;
+}
+
+.ryen-beyond-main .ryen-section-label {
+  display: block;
+  margin-bottom: 25px;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.ryen-beyond-title {
+  margin: 0;
+  font-size: clamp(52px, 7vw, 104px);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.075em;
+}
+
+.ryen-beyond-title span {
+  color: #99e836;
+}
+
+.ryen-beyond-main .ryen-creative-description {
+  max-width: 540px;
+  margin-top: 28px;
+  color: #999;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.ryen-beyond-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #99e836;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-decoration: none;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.ryen-beyond-link:hover {
+  gap: 20px;
+  color: #fff;
+}
+
+.ryen-beyond-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.ryen-beyond-icon {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  color: #99e836;
+  border-right: 1px solid rgba(255,255,255,.2);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.ryen-beyond-icon:last-child {
+  border-right: 0;
+}
+
+.ryen-beyond-icon:hover {
+  background: #99e836;
+  color: #0d0d0c;
+}
+
+@media (max-width: 768px) {
+  .ryen-beyond-home {
+    padding: 35px 24px;
+  }
+
+  .ryen-beyond-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .ryen-beyond-title {
+    font-size: clamp(48px, 12vw, 68px);
+  }
+
+  .ryen-beyond-main .ryen-creative-description {
+    font-size: 14px;
+  }
+
+  .ryen-beyond-icon {
+    min-height: 100px;
+  }
+}
+
+
+/* =========================================
+   RYEN — SKILLS / TECHNICAL TOOLKIT
+========================================= */
+
+.ryen-skills-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 28px 5vw 24px;
+  color: #fff;
+}
+
+.ryen-skills-heading {
+  margin-bottom: 30px;
+}
+
+.ryen-skills-heading > .ryen-section-label {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.ryen-skills-heading h2 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 800;
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+  text-transform: uppercase;
+}
+
+.ryen-skills-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-skills-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.ryen-skills-intro p {
+  max-width: 580px;
+  margin: 0;
+  color: #999;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ryen-skills-intro > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ryen-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 32px;
+  row-gap: 24px;
+}
+
+.ryen-skill-group {
+  height: 100%;
+  min-height: 175px;
+  padding: 17px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.3s ease;
+}
+
+.ryen-skill-group:hover {
+  border-top-color: #99e836;
+}
+
+.ryen-skill-group-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  color: #99e836;
+}
+
+.ryen-skill-group-top > span {
+  color: #888;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.ryen-skill-group-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ryen-skill-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ryen-skill-group-title h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(17px, 1.5vw, 21px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+
+.ryen-skill-group-title > span {
+  color: #99e836;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.ryen-skill-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ryen-skill-group li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.7;
+  transition: color 0.25s ease;
+}
+
+.ryen-skill-group li svg {
+  flex-shrink: 0;
+  color: #777;
+  transition: color 0.25s ease;
+}
+
+.ryen-skill-group li:hover {
+  color: #fff;
+}
+
+.ryen-skill-group li:hover svg {
+  color: #99e836;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ryen-skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 18px;
+  }
+
+  .ryen-skills-heading h2 {
+    font-size: clamp(46px, 8vw, 72px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ryen-skills-section {
+    padding: 38px 24px 32px;
+  }
+
+  .ryen-skills-heading {
+    margin-bottom: 28px;
+  }
+
+  .ryen-skills-heading > .ryen-section-label {
+    margin-bottom: 14px;
+  }
+
+  .ryen-skills-heading h2 {
+    font-size: clamp(43px, 12vw, 64px);
+    line-height: 0.95;
+  }
+
+  .ryen-skills-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .ryen-skills-intro p {
+    font-size: 14px;
+  }
+
+  .ryen-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ryen-skill-group {
+    min-height: 0;
+    padding: 18px 0;
+  }
+
+  .ryen-skill-group-top {
+    margin-bottom: 16px;
+  }
+
+  .ryen-skill-group-title h3 {
+    font-size: 19px;
+  }
+
+  .ryen-skill-group ul {
+    gap: 9px 14px;
+  }
+
+  .ryen-skill-group li {
+    font-size: 12px;
+  }
+}
+
+
+
+/* RYEN — SKILLS SECTION VIEWPORT FIT */
+
+@media (min-width: 769px) {
+  .ryen-page:nth-child(5) {
+    overflow: hidden;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skills-section {
+    padding-top: 18px;
+    padding-bottom: 16px;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skills-heading {
+    margin-bottom: 20px;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skills-heading h2 {
+    font-size: clamp(52px, 5.5vw, 72px);
+    line-height: 0.88;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skills-intro {
+    margin-top: 12px;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skills-grid {
+    row-gap: 10px;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skill-group {
+    min-height: 145px;
+    padding: 12px 0;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skill-group-top {
+    margin-bottom: 12px;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skill-group-content {
+    gap: 10px;
+  }
+
+  .ryen-page:nth-child(5) .ryen-skill-group ul {
+    gap: 5px 11px;
+  }
+}
+
+
+
+/* =========================================
+   RYEN — EXPERIENCE & RECOGNITION
+========================================= */
+
+.ryen-experience-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px 5vw 22px;
+  color: #fff;
+}
+
+.ryen-experience-heading {
+  margin-bottom: 25px;
+}
+
+.ryen-experience-heading > .ryen-section-label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.ryen-experience-heading h2 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+}
+
+.ryen-experience-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-experience-heading > p {
+  max-width: 600px;
+  margin-top: 13px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ryen-experience-main {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 34px;
+  align-items: stretch;
+}
+
+.ryen-internship {
+  padding: 18px 0 20px;
+  border-top: 1px solid rgba(255,255,255,.3);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.ryen-experience-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 25px;
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ryen-completed {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #99e836;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.ryen-internship-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ryen-internship-title > svg {
+  flex-shrink: 0;
+  color: #99e836;
+}
+
+.ryen-internship-title h3 {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.ryen-internship-title p {
+  margin-top: 5px;
+  color: #999;
+  font-size: 13px;
+}
+
+.ryen-internship-date {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.ryen-internship-date svg {
+  color: #99e836;
+}
+
+.ryen-responsibilities {
+  margin-top: 25px;
+}
+
+.ryen-detail-label {
+  display: block;
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ryen-responsibilities ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ryen-responsibilities li {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.ryen-responsibilities li > span {
+  color: #777;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.ryen-responsibilities li p {
+  flex: 1;
+  margin: 0;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ryen-responsibilities li > svg {
+  flex-shrink: 0;
+  color: #99e836;
+}
+
+.ryen-internship-certificate {
+  min-width: 0;
+  padding: 18px 0 20px;
+  border-top: 1px solid rgba(255,255,255,.3);
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.ryen-certificate-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.ryen-certificate-heading h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 9px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.ryen-certificate-heading h3 svg {
+  color: #99e836;
+}
+
+.ryen-certificate-number {
+  color: #777;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.ryen-certificate-preview {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #171716;
+}
+
+.ryen-certificate-image {
+  display: block;
+  width: 100%;
+  height: clamp(180px, 20vw, 260px);
+  object-fit: contain;
+  transition: transform .6s ease;
+}
+
+.ryen-certificate-preview:hover .ryen-certificate-image {
+  transform: scale(1.035);
+}
+
+.ryen-certificate-open {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  background: #99e836;
+  color: #0d0d0c;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: .3s ease;
+}
+
+.ryen-certificate-preview:hover .ryen-certificate-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ryen-certificate-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 15px;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: gap .3s ease;
+}
+
+.ryen-certificate-link:hover {
+  gap: 14px;
+}
+
+.ryen-recognition {
+  margin-top: 25px;
+}
+
+.ryen-recognition-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.ryen-recognition-heading h3 {
+  margin: 8px 0 0;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.ryen-recognition-heading h3 span {
+  color: #99e836;
+}
+
+.ryen-all-achievements {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #99e836;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: gap .3s ease;
+}
+
+.ryen-all-achievements:hover {
+  gap: 13px;
+}
+
+.ryen-achievement-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ryen-achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255,255,255,.25);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.ryen-achievement-number {
+  color: #99e836;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.ryen-achievement-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ryen-achievement-content > span {
+  color: #999;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ryen-achievement-content h4 {
+  margin: 6px 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.ryen-achievement-content p {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ryen-achievement-item > svg {
+  flex-shrink: 0;
+  color: #99e836;
+}
+
+/* Desktop viewport fit */
+@media (min-width: 769px) {
+  .ryen-page:nth-child(6) .ryen-experience-section {
+    padding-top: 16px;
+    padding-bottom: 14px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-experience-heading {
+    margin-bottom: 17px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-experience-heading h2 {
+    font-size: clamp(44px, 4.5vw, 62px);
+  }
+
+  .ryen-page:nth-child(6) .ryen-experience-main {
+    gap: 28px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-internship,
+  .ryen-page:nth-child(6) .ryen-internship-certificate {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-experience-topline {
+    margin-bottom: 16px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-internship-date {
+    margin-top: 14px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-responsibilities {
+    margin-top: 15px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-responsibilities li {
+    padding: 7px 0;
+  }
+
+  .ryen-page:nth-child(6) .ryen-certificate-image {
+    height: clamp(150px, 17vh, 190px);
+  }
+
+  .ryen-page:nth-child(6) .ryen-recognition {
+    margin-top: 17px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-recognition-heading {
+    margin-bottom: 10px;
+  }
+
+  .ryen-page:nth-child(6) .ryen-achievement-item {
+    padding: 10px 0;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .ryen-experience-main {
+    gap: 22px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ryen-experience-section {
+    padding: 38px 24px 32px;
+  }
+
+  .ryen-experience-heading {
+    margin-bottom: 28px;
+  }
+
+  .ryen-experience-heading h2 {
+    font-size: clamp(42px, 11vw, 62px);
+  }
+
+  .ryen-experience-heading > p {
+    font-size: 14px;
+  }
+
+  .ryen-experience-main {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .ryen-internship,
+  .ryen-internship-certificate {
+    padding: 18px 0;
+  }
+
+  .ryen-internship-title h3 {
+    font-size: 21px;
+  }
+
+  .ryen-certificate-image {
+    height: auto;
+    max-height: 360px;
+  }
+
+  .ryen-certificate-open {
+    opacity: 1;
+    transform: none;
+  }
+
+  .ryen-recognition {
+    margin-top: 35px;
+  }
+
+  .ryen-recognition-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .ryen-achievement-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ryen-achievement-item {
+    padding: 16px 0;
+  }
+}
+
+
+
+/* RYEN — EXPERIENCE & RECOGNITION FIT */
+
+.ryen-page:nth-child(6) {
+  overflow: hidden;
+}
+
+.ryen-experience-section {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 22px 5vw 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Main heading */
+.ryen-experience-heading {
+  margin-bottom: 0;
+}
+
+.ryen-experience-heading h2 {
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: .88;
+  letter-spacing: -.065em;
+}
+
+.ryen-experience-heading p {
+  max-width: 620px;
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Internship and certificate */
+.ryen-experience-main {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.ryen-internship,
+.ryen-internship-certificate {
+  min-width: 0;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.ryen-internship-title {
+  margin-top: 20px;
+}
+
+.ryen-internship-title h3 {
+  font-size: clamp(20px, 2vw, 27px);
+}
+
+.ryen-internship-date {
+  margin-top: 14px;
+}
+
+.ryen-responsibilities {
+  margin-top: 16px;
+}
+
+.ryen-responsibilities ul {
+  margin-top: 8px;
+}
+
+.ryen-responsibilities li {
+  padding: 8px 0;
+}
+
+.ryen-certificate-preview {
+  height: 150px;
+  margin-top: 12px;
+}
+
+.ryen-certificate-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ryen-certificate-link {
+  margin-top: 12px;
+}
+
+/* Recognition */
+.ryen-recognition {
+  margin-top: 0;
+}
+
+.ryen-recognition-heading {
+  margin-bottom: 10px;
+}
+
+.ryen-recognition-heading h3 {
+  font-size: clamp(24px, 2.5vw, 32px);
+}
+
+.ryen-achievement-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ryen-achievement-item {
+  padding: 14px 16px;
+}
+
+/* Mobile: allow natural scrolling */
+@media (max-width: 768px) {
+  .ryen-page:nth-child(6) {
+    height: auto;
+    min-height: calc(100svh - 70px);
+    overflow: visible;
+  }
+
+  .ryen-experience-section {
+    height: auto;
+    min-height: 0;
+    padding: 48px 24px;
+    gap: 30px;
+    overflow: visible;
+  }
+
+  .ryen-experience-main {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ryen-achievement-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ryen-certificate-preview {
+    height: auto;
+    min-height: 180px;
+  }
+}
+
+
+/* EXPERIENCE — FINAL DESKTOP FIT */
+
+@media (min-width: 769px) {
+  .ryen-page:nth-child(6) {
+    overflow: hidden;
+  }
+
+  .ryen-experience-section {
+    justify-content: flex-start;
+    gap: 14px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  .ryen-experience-heading h2 {
+    font-size: clamp(38px, 4.2vw, 54px);
+    line-height: .86;
+  }
+
+  .ryen-experience-heading p {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .ryen-experience-main {
+    gap: 26px;
+  }
+
+  .ryen-internship,
+  .ryen-internship-certificate {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .ryen-internship-title {
+    margin-top: 12px;
+  }
+
+  .ryen-internship-date {
+    margin-top: 9px;
+  }
+
+  .ryen-responsibilities {
+    margin-top: 10px;
+  }
+
+  .ryen-responsibilities li {
+    padding: 6px 0;
+  }
+
+  .ryen-certificate-preview {
+    height: 115px;
+  }
+
+  .ryen-certificate-link {
+    margin-top: 8px;
+  }
+
+  .ryen-recognition-heading {
+    margin-bottom: 8px;
+  }
+
+  .ryen-recognition-heading h3 {
+    font-size: 25px;
+  }
+
+  .ryen-achievement-list {
+    gap: 12px;
+  }
+
+  .ryen-achievement-item {
+    padding: 10px 14px;
+  }
+
+  .ryen-achievement-content h4 {
+    font-size: 19px;
+  }
+
+  .ryen-achievement-content p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+
+
+/* RYEN — DEDICATED RECOGNITION PAGE */
+
+.ryen-page:has(.ryen-recognition-page) {
+  overflow: hidden;
+}
+
+.ryen-recognition-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1600px;
+  height: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 55px 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 55px;
+  overflow: hidden;
+}
+
+.ryen-recognition-header {
+  max-width: 950px;
+}
+
+.ryen-recognition-header h2 {
+  margin-top: 18px;
+  font-size: clamp(52px, 7vw, 100px);
+  font-weight: 800;
+  line-height: .88;
+  letter-spacing: -.075em;
+}
+
+.ryen-recognition-header h2 span {
+  color: #99e836;
+}
+
+.ryen-recognition-header p {
+  max-width: 620px;
+  margin-top: 22px;
+  color: #999;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.ryen-recognition-page .ryen-recognition-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+.ryen-recognition-page .ryen-recognition-heading h3 {
+  margin-top: 10px;
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  letter-spacing: -.06em;
+}
+
+.ryen-recognition-page .ryen-recognition-heading h3 span {
+  color: #99e836;
+}
+
+.ryen-recognition-page .ryen-achievement-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.ryen-recognition-page .ryen-achievement-item {
+  min-height: 190px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 4px;
+  background: #111;
+  transition: border-color .3s ease, transform .3s ease;
+}
+
+.ryen-recognition-page .ryen-achievement-item:hover {
+  border-color: #99e836;
+  transform: translateY(-5px);
+}
+
+.ryen-recognition-page .ryen-achievement-item > svg {
+  color: #99e836;
+}
+
+.ryen-recognition-page .ryen-achievement-content > span {
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ryen-recognition-page .ryen-achievement-content h4 {
+  margin-top: 14px;
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+
+.ryen-recognition-page .ryen-achievement-content p {
+  margin-top: 10px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .ryen-page:has(.ryen-recognition-page) {
+    height: auto;
+    min-height: calc(100svh - 70px);
+    overflow: visible;
+  }
+
+  .ryen-recognition-page {
+    height: auto;
+    min-height: 0;
+    padding: 55px 24px;
+    gap: 36px;
+    overflow: visible;
+  }
+
+  .ryen-recognition-header h2 {
+    font-size: clamp(44px, 12vw, 64px);
+  }
+
+  .ryen-recognition-header p {
+    font-size: 14px;
+  }
+
+  .ryen-recognition-page .ryen-recognition-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ryen-recognition-page .ryen-achievement-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ryen-recognition-page .ryen-achievement-item {
+    min-height: 160px;
+    padding: 22px;
+  }
+}
+
+
+/* RYEN — PREMIUM TOP NAVIGATION */
+
+.ryen-topbar {
+  height: 82px;
+  background: #050505;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.ryen-topbar-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 4.2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ryen-menu-trigger {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.ryen-menu-trigger span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transition: width .3s ease, background .3s ease;
+}
+
+.ryen-menu-trigger span:nth-child(2) {
+  width: 21px;
+}
+
+.ryen-menu-trigger:hover span:nth-child(2) {
+  width: 30px;
+}
+
+.ryen-menu-trigger:hover span {
+  background: #99e836;
+}
+
+.ryen-brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ryen-brand span {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 15px;
+  background: #fff;
+  color: #050505;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  transition: transform .3s ease;
+}
+
+.ryen-brand:hover span {
+  transform: rotate(-5deg);
+}
+
+.ryen-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.ryen-talk-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 184px;
+  height: 54px;
+  padding: 0 25px;
+  border-radius: 50px;
+  background: #fff;
+  color: #050505;
+  font-size: 14px;
+  font-weight: 750;
+  transition: background .3s ease, transform .3s ease;
+}
+
+.ryen-talk-button:hover {
+  background: #99e836;
+  transform: translateY(-2px);
+}
+
+@media(max-width:768px) {
+  .ryen-topbar {
+    height: 78px;
+  }
+
+  .ryen-topbar-inner {
+    padding: 0 18px;
+  }
+
+  .ryen-menu-trigger {
+    width: 38px;
+    height: 42px;
+  }
+
+  .ryen-menu-trigger span {
+    width: 25px;
+  }
+
+  .ryen-menu-trigger span:nth-child(2) {
+    width: 18px;
+  }
+
+  .ryen-brand span {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 17px;
+  }
+
+  .ryen-topbar-actions {
+    gap: 12px;
+  }
+
+  .ryen-talk-button {
+    min-width: 0;
+    height: 42px;
+    padding: 0 15px;
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .ryen-talk-button svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+/* =========================================
+   PROJECTS — SWIPER CREATIVE EFFECT
+========================================= */
+
+.ryen-category-track.swiper {
+  width: 100%;
+  overflow: hidden;
+  padding: 2px 0 12px;
+}
+
+.ryen-category-track .swiper-wrapper {
+  align-items: stretch;
+}
+
+.ryen-category-track .swiper-slide {
+  height: auto;
+  box-sizing: border-box;
+}
+
+.ryen-category-track .swiper-slide-shadow {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-category-track .swiper-wrapper {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* FIX — SWIPER PROJECT CATEGORY LAYOUT */
+
+.ryen-category-track.swiper {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 2px 0 12px;
+}
+
+.ryen-category-track.swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.ryen-category-track.swiper .swiper-slide.ryen-category-slide {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  min-width: 0;
+  height: auto;
+  margin: 0 !important;
+  scroll-snap-align: none;
+}
+
+.ryen-category-track.swiper .ryen-category-visual {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* PROJECT CATEGORY — EXPLORE HOVER ANIMATION */
+
+.ryen-category-explore {
+  transition: color 0.3s ease;
+}
+
+.ryen-category-explore span {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ryen-category-explore svg {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ryen-category-visual:hover .ryen-category-explore span {
+  transform: translateX(5px);
+}
+
+.ryen-category-visual:hover .ryen-category-explore svg {
+  transform: translate(5px, -5px);
+  color: #fff;
+}
+
+
+/* EXPLORE CATEGORY — PREMIUM HOVER ANIMATION */
+
+.ryen-category-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: color 0.35s ease;
+}
+
+.ryen-category-explore span {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ryen-category-explore svg {
+  flex-shrink: 0;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.3s ease;
+}
+
+.ryen-category-visual:hover .ryen-category-explore span {
+  transform: translateX(7px);
+}
+
+.ryen-category-visual:hover .ryen-category-explore svg {
+  transform: translate(5px, -5px);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-category-explore span,
+  .ryen-category-explore svg {
+    transition: none;
+  }
+}
+
+
+
+/* GLOBAL SPRING MOUSE FOLLOWER */
+
+.ryen-global-mouse {
+  position: fixed;
+  top: -13px;
+  left: -13px;
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #99e836;
+  box-shadow:
+    0 0 14px rgba(153, 232, 54, 0.7),
+    0 0 32px rgba(153, 232, 54, 0.4);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .ryen-global-mouse {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-global-mouse {
+    display: none;
+  }
+}
+
+
+/* GLOBAL SECTION PROGRESS */
+
+.ryen-global-progress {
+  position: fixed;
+  left: 42%;
+  right: 4%;
+  bottom: 24px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  pointer-events: none;
+}
+
+.ryen-global-progress-line {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.ryen-global-progress-line span {
+  display: block;
+  height: 100%;
+  background: #99e836;
+}
+
+.ryen-global-progress-count {
+  flex-shrink: 0;
+  color: #a3a3a3;
+  font-size: 13px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .ryen-global-progress {
+    left: 20px;
+    right: 20px;
+    bottom: 16px;
+    gap: 12px;
+  }
+
+  .ryen-global-progress-count {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-global-progress-line span {
+    transition: none !important;
+  }
+}
+
+
+
+.ryen-global-progress {
+  position: fixed;
+  left: 42%;
+  right: 21%;
+  bottom: 24px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  pointer-events: none;
+}
+
+.ryen-global-progress-line {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.ryen-global-progress-line span {
+  display: block;
+  height: 100%;
+  background: #99e836;
+}
+
+.ryen-global-progress-count {
+  flex-shrink: 0;
+  color: #a3a3a3;
+  font-size: 13px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .ryen-global-progress {
+    left: 20px;
+    right: 20px;
+    bottom: 16px;
+    gap: 12px;
+  }
+
+  .ryen-global-progress-count {
+    font-size: 11px;
+  }
+}
+
+
+/* NAVIGATION PANEL — VISIBILITY FIX */
+
+.ryen-nav-panel {
+  background-color: #99e836 !important;
+  color: #0d0d0c !important;
+}
+
+.ryen-nav-panel nav {
+  position: relative;
+  z-index: 2;
+}
+
+.ryen-nav-panel nav a {
+  color: rgba(13, 13, 12, 0.62);
+  text-decoration: none;
+}
+
+.ryen-nav-panel nav a:hover,
+.ryen-nav-panel nav a.text-black {
+  color: #0d0d0c;
+}
+
+.ryen-nav-panel nav a span {
+  color: rgba(13, 13, 12, 0.45);
+}
+
+.ryen-nav-panel > div:last-child {
+  position: relative;
+  z-index: 2;
+  color: #0d0d0c;
+}
+
+/* =========================================
+   CONTACT — CLEAN, COMPACT LAYOUT
+========================================= */
+
+.ryen-page:last-child:has(.ryen-contact-section) {
+  height: auto;
+  min-height: calc(100svh - 84px);
+  overflow: visible;
+  justify-content: flex-start;
+  scroll-snap-stop: normal;
+}
+
+.ryen-page:last-child:has(.ryen-contact-section) > section {
+  min-height: 0;
+}
+
+.ryen-contact-section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 28px 5vw 18px;
+  color: #fff;
+}
+
+/* TOP — HEADING + EMAIL CTA */
+
+.ryen-contact-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 5vw;
+  margin-bottom: 30px;
+}
+
+.ryen-contact-heading {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.ryen-contact-heading > .ryen-section-label,
+.ryen-contact-label {
+  display: block;
+  margin-bottom: 15px;
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.ryen-contact-heading h2 {
+  margin: 0;
+  font-size: clamp(52px, 6.1vw, 88px);
+  font-weight: 800;
+  line-height: .91;
+  letter-spacing: -.075em;
+}
+
+.ryen-contact-heading h2 span {
+  color: #99e836;
+}
+
+.ryen-contact-heading > p {
+  max-width: 570px;
+  margin-top: 17px;
+  color: #999;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* EMAIL CTA */
+
+.ryen-contact-cta {
+  min-width: 0;
+  padding: 20px 0 12px 34px;
+  border-left: 1px solid rgba(255,255,255,.2);
+}
+
+.ryen-contact-cta > svg {
+  display: block;
+  margin-top: 20px;
+  color: #99e836;
+}
+
+.ryen-contact-cta h3 {
+  margin-top: 17px;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.07em;
+}
+
+.ryen-contact-cta > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 17px;
+  color: #99e836;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  transition: gap .3s ease;
+}
+
+.ryen-contact-cta > a:hover {
+  gap: 17px;
+}
+
+/* SOCIAL LINKS */
+
+.ryen-contact-main {
+  display: block;
+  width: 100%;
+}
+
+.ryen-contact-details {
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,.24);
+}
+
+.ryen-contact-details > .ryen-contact-label {
+  margin: 17px 0 7px;
+}
+
+.ryen-contact-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.ryen-contact-link {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 28px 28px;
+  align-items: center;
+  gap: 14px;
+  min-height: 60px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  color: #fff;
+  transition: padding .3s ease, color .3s ease;
+}
+
+.ryen-contact-link:hover {
+  padding-left: 8px;
+  color: #99e836;
+}
+
+.ryen-contact-number {
+  color: #777;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.ryen-contact-link-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  transition: color .3s ease;
+}
+
+.ryen-contact-link-content p {
+  margin-top: 3px;
+  color: #858585;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.ryen-contact-link > svg,
+.ryen-contact-x {
+  color: #99e836;
+}
+
+.ryen-contact-x {
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ryen-contact-arrow {
+  opacity: .55;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.ryen-contact-link:hover .ryen-contact-arrow {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+/* FOOTER */
+
+.ryen-contact-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  color: #858585;
+  font-size: 10px;
+  letter-spacing: .8px;
+}
+
+.ryen-contact-bottom > div,
+.ryen-contact-bottom > a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ryen-contact-bottom > div svg,
+.ryen-contact-bottom > a {
+  color: #99e836;
+}
+
+.ryen-contact-bottom > a {
+  font-weight: 700;
+}
+
+/* TABLET + MOBILE */
+
+@media (max-width: 900px) {
+  .ryen-contact-hero {
+    grid-template-columns: 1fr .8fr;
+    gap: 28px;
+  }
+
+  .ryen-contact-heading h2 {
+    font-size: clamp(48px, 7vw, 68px);
+  }
+
+  .ryen-contact-cta {
+    padding-left: 24px;
+  }
+
+  .ryen-contact-cta h3 {
+    font-size: clamp(38px, 5vw, 52px);
+  }
+}
+
+@media (max-width: 768px) {
+  .ryen-page:last-child:has(.ryen-contact-section) {
+    height: auto;
+    min-height: calc(100svh - 70px);
+    overflow: visible;
+  }
+
+  .ryen-contact-section {
+    padding: 34px 24px 24px;
+  }
+
+  .ryen-contact-hero {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+
+  .ryen-contact-heading h2 {
+    font-size: clamp(46px, 11vw, 68px);
+  }
+
+  .ryen-contact-heading > p {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+
+  .ryen-contact-cta {
+    padding: 20px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,.2);
+  }
+
+  .ryen-contact-cta > svg {
+    margin-top: 15px;
+  }
+
+  .ryen-contact-cta h3 {
+    font-size: 46px;
+  }
+
+  .ryen-contact-cta > a {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+
+  .ryen-contact-link {
+    grid-template-columns: 30px minmax(0, 1fr) 24px 24px;
+    min-height: 64px;
+    gap: 10px;
+  }
+
+  .ryen-contact-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 9px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .ryen-contact-section {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .ryen-contact-heading h2 {
+    font-size: 43px;
+  }
+
+  .ryen-contact-link-content h4 {
+    font-size: 13px;
+  }
+
+  .ryen-contact-link-content p {
+    font-size: 11px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-contact-link,
+  .ryen-contact-cta > a,
+  .ryen-contact-arrow {
+    transition: none;
+  }
+}
+
+
+/* CONTACT — RESUME DOWNLOAD */
+
+.ryen-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin-top: 18px;
+}
+
+.ryen-contact-cta .ryen-contact-actions > a {
+  margin-top: 0;
+}
+
+.ryen-contact-actions .ryen-resume-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid rgba(153, 232, 54, .65);
+  color: #99e836;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  transition: background .3s ease, color .3s ease;
+}
+
+.ryen-contact-actions .ryen-resume-button:hover {
+  background: #99e836;
+  color: #0d0d0c;
+}
+
+@media (max-width: 768px) {
+  .ryen-contact-actions {
+    gap: 14px;
+  }
+}
+
+/* NAVBAR — RESUME DOWNLOAD */
+
+.ryen-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ryen-resume-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    color .3s ease,
+    background .3s ease,
+    border-color .3s ease;
+}
+
+.ryen-resume-nav-button:hover {
+  color: #0d0d0c;
+  background: #99e836;
+  border-color: #99e836;
+}
+
+.ryen-menu-resume {
+  color: #0d0d0c;
+}
+
+.ryen-menu-resume:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .ryen-topbar-actions {
+    gap: 8px;
+  }
+
+  .ryen-resume-nav-button {
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .ryen-resume-nav-button svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* MOBILE NAVBAR — PREVENT LOGO OVERLAP */
+
+@media (max-width: 600px) {
+  .ryen-topbar-inner {
+    position: relative;
+  }
+
+  .ryen-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ryen-topbar-actions {
+    gap: 7px;
+  }
+
+  .ryen-resume-nav-button {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    min-height: 38px;
+    padding: 0;
+    gap: 0;
+  }
+
+  .ryen-resume-nav-button span {
+    display: none;
+  }
+
+  .ryen-talk-button {
+    min-height: 40px;
+    padding: 0 12px;
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .ryen-talk-button svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* MOBILE HERO — BETTER PROPORTIONS */
+
+@media (max-width: 600px) {
+  .ryen-home-portrait {
+    max-height: 340px;
+  }
+
+  .ryen-home-content {
+    min-width: 0;
+  }
+
+  .ryen-home-name {
+    max-width: 100%;
+  }
+
+  .ryen-name-line {
+    max-width: 100%;
+  }
+
+  .ryen-home-bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 76px;
+    align-items: end;
+    gap: 12px;
+  }
+
+  .ryen-home-role {
+    min-width: 0;
+  }
+
+  .ryen-role-description {
+    overflow-wrap: break-word;
+  }
+
+  .ryen-contact-circle {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+  }
+
+  .ryen-contact-arrow svg {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+/* TOUCH DEVICES — NO CUSTOM MOUSE FOLLOWER */
+
+@media (hover: none), (pointer: coarse) {
+  .ryen-global-mouse {
+    display: none !important;
+  }
+}
+
+/* =========================================
+   MOBILE HERO — FINAL LAYOUT REFINEMENT
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* Main hero container */
+  .ryen-home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-top: 70px;
+    overflow: visible;
+  }
+
+  /* Portrait */
+  .ryen-home-portrait {
+    position: relative;
+    width: 100%;
+    height: clamp(250px, 72vw, 340px);
+    min-height: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  /* Main content */
+  .ryen-home-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 26px 24px 30px;
+    gap: 20px;
+    overflow: visible;
+  }
+
+  /* Introduction */
+  .ryen-home-description {
+    width: 100%;
+  }
+
+  .ryen-home-description p {
+    max-width: 100%;
+    line-height: 1.65;
+  }
+
+  /* Marquee */
+  .ryen-marquee {
+    width: calc(100% + 48px);
+    max-width: none;
+    margin-left: -24px;
+    overflow: hidden;
+  }
+
+  .ryen-marquee-track {
+    width: max-content;
+    white-space: nowrap;
+  }
+
+  /* Name */
+  .ryen-home-name {
+    width: 100%;
+    max-width: 100%;
+    line-height: .9;
+  }
+
+  .ryen-name-line {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  /* Bottom content — separate text and circle */
+  .ryen-home-bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 76px;
+    align-items: end;
+    gap: 12px;
+    width: 100%;
+    margin-top: 4px;
+    padding-top: 0;
+  }
+
+  .ryen-home-role {
+    min-width: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .ryen-role-title {
+    line-height: 1.5;
+  }
+
+  .ryen-role-description {
+    max-width: 100%;
+    margin-top: 9px;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+
+  .ryen-home-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  /* Contact circle */
+  .ryen-contact-circle {
+    position: relative;
+    align-self: end;
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .ryen-contact-text {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 380px) {
+  .ryen-home-content {
+    padding-right: 19px;
+    padding-left: 19px;
+    gap: 17px;
+  }
+
+  .ryen-home-bottom {
+    grid-template-columns: minmax(0, 1fr) 66px;
+    gap: 8px;
+  }
+
+  .ryen-contact-circle {
+    width: 66px;
+    height: 66px;
+    min-width: 66px;
+  }
+}
+
+/* =========================================
+   MOBILE NAVBAR — CENTERING FIX
+========================================= */
+
+@media (max-width: 768px) {
+  .ryen-topbar-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    padding: 0 18px;
+  }
+
+  .ryen-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ryen-brand span {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+  }
+
+  .ryen-menu-trigger {
+    flex-shrink: 0;
+  }
+
+  .ryen-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+  }
+}
+
+/* Prevent accidental horizontal page overflow */
+@media (max-width: 768px) {
+  .ryen-home,
+  .ryen-home-content {
+    max-width: 100%;
+  }
+
+  .ryen-home {
+    overflow-x: clip;
+  }
+}
+
+
+/* =========================================
+   FULLSCREEN ANIMATED TYPOGRAPHY HERO
+========================================= */
+
+.ryen-home-animated {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #0d0d0c;
+}
+
+.hero-full-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1600px;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: clamp(35px, 5vw, 75px) 7% 24px;
+  overflow: hidden;
+}
+
+.hero-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.17;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 65px 65px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+.hero-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  top: 10%;
+  right: 12%;
+  background: #99e836;
+  opacity: .12;
+  animation: hero-glow-pulse 7s ease-in-out infinite alternate;
+}
+
+.hero-glow-two {
+  bottom: 0;
+  left: 8%;
+  background: #e32636;
+  opacity: .07;
+  animation: hero-glow-pulse 9s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes hero-glow-pulse {
+  from { transform: scale(.8); }
+  to { transform: scale(1.25); }
+}
+
+/* Orbital design */
+
+.hero-orbit {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  width: min(42vw, 540px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(153,232,54,.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-orbit::before,
+.hero-orbit::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(153,232,54,.13);
+  border-radius: 50%;
+}
+
+.hero-orbit::before {
+  inset: 12%;
+}
+
+.hero-orbit::after {
+  inset: 25%;
+}
+
+.hero-orbit-two {
+  width: min(30vw, 390px);
+  border-style: dashed;
+  border-color: rgba(255,255,255,.15);
+}
+
+.hero-orbit-core {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #99e836;
+  box-shadow: 0 0 30px 12px rgba(153,232,54,.35);
+  transform: translate(-50%, -50%);
+}
+
+/* Status and introduction */
+
+.ryen-home-animated .ryen-home-description {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #99e836;
+  box-shadow: 0 0 12px #99e836;
+  animation: hero-status-blink 1.8s infinite;
+}
+
+@keyframes hero-status-blink {
+  50% { opacity: .3; }
+}
+
+.ryen-home-animated .ryen-home-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ryen-home-animated .ryen-home-description p {
+  max-width: 540px;
+  font-size: clamp(14px, 1.2vw, 17px);
+}
+
+/* Marquee */
+
+.hero-marquee {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 10px 0;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.hero-marquee .ryen-marquee-track span {
+  font-size: clamp(13px, 1.3vw, 18px);
+}
+
+/* Floating technology labels */
+
+.hero-floating-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 16px;
+  border: 1px solid rgba(153,232,54,.22);
+  border-radius: 4px;
+  background: rgba(20,20,18,.72);
+  color: #b8b8b0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  backdrop-filter: blur(12px);
+}
+
+.hero-floating-card svg {
+  color: #99e836;
+}
+
+.hero-float-one {
+  top: 26%;
+  right: 13%;
+}
+
+.hero-float-two {
+  top: 55%;
+  right: 4%;
+}
+
+.hero-float-three {
+  top: 73%;
+  right: 18%;
+}
+
+/* Main typography */
+
+.ryen-home-animated .hero-name {
+  position: relative;
+  z-index: 3;
+  width: fit-content;
+  max-width: 100%;
+  margin: 15px 0;
+  font-size: clamp(100px, 15vw, 220px);
+  line-height: .79;
+  letter-spacing: -.09em;
+}
+
+.ryen-home-animated .hero-im {
+  color: #fff;
+}
+
+.ryen-home-animated .hero-name-line {
+  display: inline-block;
+  color: #99e836;
+  cursor: pointer;
+  transform-origin: left center;
+  transition:
+    color .45s ease,
+    transform .65s cubic-bezier(.16,1,.3,1),
+    letter-spacing .65s cubic-bezier(.16,1,.3,1),
+    text-shadow .45s ease;
+}
+
+.ryen-home-animated .hero-name-hover {
+  display: inline-block;
+  transition:
+    color .45s ease,
+    transform .65s cubic-bezier(.16,1,.3,1);
+}
+
+.ryen-home-animated .hero-name-line:hover {
+  color: #e32636;
+  transform: skewX(-5deg) translateX(12px);
+  letter-spacing: -.065em;
+  text-shadow: 0 0 35px rgba(227,38,54,.2);
+}
+
+.ryen-home-animated .hero-name-line:hover .hero-name-hover {
+  color: #e32636;
+  transform: translateY(-5px);
+}
+
+.ryen-home-animated .hero-name-line:hover .ryen-name-dot {
+  color: #fff;
+}
+
+/* Bottom content */
+
+.ryen-home-animated .hero-home-bottom {
+  position: relative;
+  z-index: 3;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.ryen-home-animated .ryen-home-role {
+  max-width: 500px;
+}
+
+.ryen-home-animated .ryen-role-description {
+  max-width: 440px;
+}
+
+.hero-bottom-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 24px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,.13);
+  color: #777;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.hero-bottom-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-bottom-meta svg {
+  color: #99e836;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .ryen-home-animated {
+    height: auto;
+    min-height: calc(100svh - 70px);
+    overflow: hidden;
+  }
+
+  .hero-full-content {
+    min-height: calc(100svh - 70px);
+    height: auto;
+    padding: 45px 24px 22px;
+    gap: 22px;
+    overflow: hidden;
+  }
+
+  .ryen-home-animated .ryen-home-description p {
+    font-size: 14px;
+  }
+
+  .hero-marquee {
+    margin: 0;
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    padding: 10px 0;
+  }
+
+  .ryen-home-animated .hero-name {
+    margin: 15px 0 25px;
+    font-size: clamp(68px, 15vw, 112px);
+    line-height: .87;
+  }
+
+  .hero-orbit {
+    top: 47%;
+    left: 75%;
+    width: 75vw;
+  }
+
+  .hero-orbit-two {
+    width: 55vw;
+  }
+
+  .hero-orbit-core {
+    left: 75%;
+  }
+
+  .hero-floating-card {
+    padding: 8px 10px;
+    font-size: 8px;
+  }
+
+  .hero-float-one {
+    top: 30%;
+    right: 5%;
+  }
+
+  .hero-float-two {
+    top: 51%;
+    right: 3%;
+  }
+
+  .hero-float-three {
+    top: 68%;
+    right: 8%;
+  }
+
+  .ryen-home-animated .hero-home-bottom {
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .ryen-home-animated .ryen-contact-circle {
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+  }
+
+  .hero-bottom-meta {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 8px;
+  }
+
+  .hero-bottom-meta span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-full-content {
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+
+  .ryen-home-animated .hero-name {
+    font-size: 58px;
+  }
+
+  .hero-bottom-meta {
+    font-size: 7px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow,
+  .hero-status-dot,
+  .ryen-home-animated .ryen-marquee-track {
+    animation: none !important;
+  }
+
+  .ryen-home-animated .hero-name-line,
+  .ryen-home-animated .hero-name-hover {
+    transition: none;
+  }
+}
+
+/* =========================================
+   HERO — FINAL DESKTOP PROPORTION REFINEMENT
+========================================= */
+
+@media (min-width: 769px) {
+  .ryen-home-animated {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .hero-full-content {
+    padding: 38px 7% 18px;
+    gap: 10px;
+  }
+
+  .ryen-home-animated .ryen-home-description {
+    max-width: 580px;
+  }
+
+  .ryen-home-animated .ryen-home-description p {
+    max-width: 520px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .hero-marquee {
+    margin: 2px 0;
+    padding: 7px 0;
+  }
+
+  .hero-marquee .ryen-marquee-track span {
+    font-size: 15px;
+  }
+
+  /* Bring the name into proportion */
+  .ryen-home-animated .hero-name {
+    margin: 8px 0;
+    font-size: clamp(90px, 10.5vw, 170px);
+    line-height: .82;
+    letter-spacing: -.085em;
+  }
+
+  /* Keep decorative graphics behind the text */
+  .hero-orbit {
+    left: 78%;
+    width: min(38vw, 480px);
+  }
+
+  .hero-orbit-two {
+    width: min(27vw, 340px);
+  }
+
+  .hero-orbit-core {
+    left: 78%;
+  }
+
+  .hero-float-one {
+    top: 24%;
+    right: 14%;
+  }
+
+  .hero-float-two {
+    top: 48%;
+    right: 5%;
+  }
+
+  .hero-float-three {
+    top: 68%;
+    right: 17%;
+  }
+
+  .ryen-home-animated .hero-home-bottom {
+    padding-top: 8px;
+  }
+
+  .ryen-home-animated .ryen-role-description {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .ryen-home-animated .ryen-home-link {
+    margin-top: 12px;
+  }
+
+  .ryen-home-animated .ryen-contact-circle {
+    width: clamp(115px, 9vw, 145px);
+  }
+
+  .hero-bottom-meta {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+}
+
+/* Smaller laptop screens */
+
+@media (min-width: 769px) and (max-height: 800px) {
+  .hero-full-content {
+    padding-top: 24px;
+    padding-bottom: 12px;
+    gap: 6px;
+  }
+
+  .ryen-home-animated .hero-name {
+    font-size: clamp(82px, 9vw, 140px);
+  }
+
+  .hero-floating-labels {
+    opacity: .75;
+  }
+
+  .hero-bottom-meta {
+    margin-top: 7px;
+  }
+}
+
+/* =========================================
+   HERO — MOBILE SPACING REFINEMENT
+========================================= */
+
+@media (max-width: 768px) {
+  .hero-full-content {
+    padding-top: 36px;
+    padding-bottom: 22px;
+    gap: 18px;
+  }
+
+  .ryen-home-animated .hero-name {
+    font-size: clamp(65px, 14vw, 100px);
+    line-height: .88;
+    margin: 8px 0 16px;
+  }
+
+  .hero-orbit {
+    left: 80%;
+    top: 55%;
+    width: 75vw;
+    opacity: .65;
+  }
+
+  .hero-orbit-two {
+    width: 55vw;
+  }
+
+  .hero-floating-labels {
+    opacity: .5;
+  }
+
+  .hero-float-one {
+    top: 38%;
+    right: 5%;
+  }
+
+  .hero-float-two {
+    top: 58%;
+    right: 4%;
+  }
+
+  .hero-float-three {
+    display: none;
+  }
+
+  .ryen-home-animated .hero-home-bottom {
+    padding-top: 5px;
+  }
+}
+
+
+/* =========================================
+   HERO — FINAL VISUAL POLISH
+========================================= */
+
+@media (min-width: 769px) {
+  .ryen-home-animated .hero-name {
+    font-size: clamp(100px, 9.5vw, 158px);
+    line-height: .85;
+    margin: 12px 0 18px;
+  }
+
+  .ryen-home-animated .ryen-home-description {
+    max-width: 570px;
+  }
+
+  .hero-orbit {
+    opacity: .72;
+  }
+
+  .hero-orbit-two {
+    opacity: .55;
+  }
+
+  .hero-floating-card {
+    background: rgba(13, 13, 12, .82);
+    border-color: rgba(153, 232, 54, .16);
+  }
+
+  .hero-float-one {
+    right: 16%;
+  }
+
+  .hero-float-two {
+    right: 5%;
+  }
+
+  .hero-float-three {
+    right: 18%;
+  }
+
+  .hero-glow-one {
+    opacity: .09;
+  }
+
+  .hero-glow-two {
+    opacity: .055;
+  }
+
+  .ryen-home-animated .hero-home-bottom {
+    max-width: 100%;
+  }
+
+  .hero-bottom-meta {
+    letter-spacing: .15em;
+  }
+}
+
+/* Keep mobile typography independent */
+
+@media (max-width: 768px) {
+  .ryen-home-animated .hero-name {
+    font-size: clamp(65px, 14vw, 100px);
+  }
+
+  .hero-floating-labels {
+    opacity: .4;
+  }
+
+  .hero-orbit {
+    opacity: .45;
+  }
+}
+
+/* =========================================
+   HERO — FINAL MICRO ADJUSTMENTS
+========================================= */
+
+@media (min-width: 769px) {
+  .hero-full-content {
+    padding-top: 30px;
+    padding-bottom: 22px;
+    gap: 7px;
+  }
+
+  .ryen-home-animated .hero-name {
+    font-size: clamp(95px, 9vw, 150px);
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+
+  .ryen-home-animated .hero-home-bottom {
+    padding-top: 5px;
+  }
+
+  .hero-bottom-meta {
+    margin-top: 8px;
+    padding-top: 9px;
+    padding-bottom: 5px;
+  }
+
+  .hero-floating-labels {
+    opacity: .8;
+  }
+}
+
+/* More refined cursor */
+.ryen-global-mouse {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  opacity: .9;
+}
+
+/* Mobile cursor remains hidden */
+@media (hover: none), (pointer: coarse) {
+  .ryen-global-mouse {
+    display: none !important;
+  }
+}
+
+
+
+/* =========================================
+   PROJECTS — PREMIUM EXPLORE BUTTON
+========================================= */
+
+.ryen-category-explore {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: fit-content;
+  margin-top: 28px;
+  padding: 13px 19px;
+  border: 1px solid rgba(153, 232, 54, .45);
+  border-radius: 3px;
+  background: rgba(153, 232, 54, .06);
+  color: #99e836;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  transition:
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    transform .35s cubic-bezier(.16,1,.3,1),
+    box-shadow .35s ease;
+}
+
+.ryen-category-explore > span {
+  transition: transform .35s cubic-bezier(.16,1,.3,1);
+}
+
+.ryen-category-explore svg {
+  width: 20px;
+  height: 20px;
+  transition: transform .4s cubic-bezier(.16,1,.3,1);
+}
+
+/* Hover interaction */
+.ryen-category-visual:hover .ryen-category-explore {
+  color: #0d0d0c;
+  background: #99e836;
+  border-color: #99e836;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(153, 232, 54, .2);
+}
+
+.ryen-category-visual:hover .ryen-category-explore > span {
+  transform: translateX(2px);
+}
+
+.ryen-category-visual:hover .ryen-category-explore svg {
+  transform: translate(4px, -4px);
+}
+
+/* Keyboard accessibility */
+.ryen-category-visual:focus-visible {
+  outline: 2px solid #99e836;
+  outline-offset: 5px;
+}
+
+.ryen-category-visual:focus-visible .ryen-category-explore {
+  background: #99e836;
+  color: #0d0d0c;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ryen-category-explore {
+    margin-top: 20px;
+    padding: 12px 15px;
+    font-size: 12px;
+    gap: 12px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ryen-category-explore,
+  .ryen-category-explore > span,
+  .ryen-category-explore svg {
+    transition: none;
+  }
+}
+
+
+/* =========================================
+   PROJECT CAROUSEL — INTERACTION FIX
+========================================= */
+
+/* Keep the entire category card clickable */
+.ryen-category-visual {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+/* Prevent images and decorative layers from intercepting clicks */
+
+/* Keep the active slide interactive */
+
+/* Stable button appearance */
+.ryen-category-explore {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 26px;
+  padding: 14px 20px;
+  border: 1px solid rgba(153, 232, 54, .55);
+  border-radius: 3px;
+  background: rgba(153, 232, 54, .07);
+  color: #99e836;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  transition:
+    color .3s ease,
+    background .3s ease,
+    border-color .3s ease,
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.ryen-category-explore > span,
+.ryen-category-explore svg {
+  transition: transform .3s ease;
+}
+
+/* Hover is controlled by the parent Link */
+.ryen-category-visual:hover .ryen-category-explore {
+  color: #0d0d0c;
+  background: #99e836;
+  border-color: #99e836;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(153, 232, 54, .2);
+}
+
+.ryen-category-visual:hover .ryen-category-explore svg {
+  transform: translate(4px, -4px);
+}
+
+/* Keyboard focus */
+.ryen-category-visual:focus-visible {
+  outline: 2px solid #99e836;
+  outline-offset: 5px;
+}
+
+@media (max-width: 768px) {
+  .ryen-category-explore {
+    margin-top: 18px;
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ryen-category-explore,
+  .ryen-category-explore svg {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================
+   HERO — BOLDER NAME & ANIMATED GLOW
+========================================= */
+
+.ryen-home-animated .hero-name {
+  font-size: clamp(100px, 10vw, 180px);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.085em;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.ryen-home-animated .hero-name-line {
+  font-weight: 500;
+  -webkit-text-stroke: 1px currentColor;
+  transform-origin: left center;
+}
+
+.ryen-home-animated .hero-name-hover {
+  animation: hero-name-glow 3.5s ease-in-out infinite;
+  will-change: filter;
+}
+
+.ryen-home-animated .ryen-name-dot {
+  display: inline-block;
+  animation: hero-dot-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes hero-name-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(153, 232, 54, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 13px rgba(153, 232, 54, 0.22));
+  }
+}
+
+@keyframes hero-dot-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .ryen-home-animated .hero-name-hover,
+  .ryen-home-animated .ryen-name-dot {
+    animation: none;
+  }
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+  .ryen-home-animated .hero-name {
+    font-size: clamp(68px, 14vw, 105px);
+    line-height: 0.88;
+  }
+}
+
+/* =========================================
+   HERO RIGHT VISUALS — MOVE CLOSER TO NAME
+========================================= */
+
+/* Move circular orbit animations.
+   This stylesheet uses .hero-orbit for the first ring. */
+.ryen-home-animated .hero-orbit,
+.ryen-home-animated .hero-orbit-two,
+.ryen-home-animated .hero-orbit-core {
+  translate: -110px -25px !important;
+}
+
+/* Move floating technology labels */
+.ryen-home-animated .hero-floating-labels {
+  translate: -110px 0 !important;
+}
+
+/* Move LET'S WORK WITH ME circle */
+.ryen-home-animated .ryen-contact-circle {
+  translate: -110px 0 !important;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+  .ryen-home-animated .hero-orbit,
+  .ryen-home-animated .hero-orbit-two,
+  .ryen-home-animated .hero-orbit-core,
+  .ryen-home-animated .hero-floating-labels,
+  .ryen-home-animated .ryen-contact-circle {
+    translate: -50px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ryen-home-animated .hero-orbit,
+  .ryen-home-animated .hero-orbit-two,
+  .ryen-home-animated .hero-orbit-core,
+  .ryen-home-animated .hero-floating-labels,
+  .ryen-home-animated .ryen-contact-circle {
+    translate: 0 0 !important;
+  }
+}
